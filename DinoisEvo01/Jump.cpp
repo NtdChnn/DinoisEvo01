@@ -8,3 +8,11 @@ Jump::Jump(Texture* texture, Vector2u imageCount, float switchTime, float jumpsp
 Jump::~Jump()
 {
 }
+
+void Jump::Update(float deltatime)
+{
+}
+
+void Jump::Draw(RenderWindow& window)
+{
+}

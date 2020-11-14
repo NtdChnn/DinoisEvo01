@@ -18,6 +18,5 @@ private:
 	unsigned int row;
 	bool run;
 	float speed;
-	float jumpspeed;
 };
 

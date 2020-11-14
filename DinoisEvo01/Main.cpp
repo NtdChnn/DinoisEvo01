@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <sstream> 
 #include "Player.h"
+#include "Jump.h"
 using namespace sf;
 using namespace std;
 
@@ -25,12 +26,14 @@ int main()
 	//setTexture
 	Texture playerTexture01Run;
 	playerTexture01Run.loadFromFile("player01Run.png");
+	Texture playerTexture01Jump;
+	playerTexture01Jump.loadFromFile("player01Jump.png");
 	Texture BG01Texture;
 	BG01Texture.loadFromFile("BGForestNight.png");
 	BG01.setTexture(&BG01Texture);
 
 	Player player(&playerTexture01Run, Vector2u(8, 1), 0.05f,200.0f);
-
+	Jump jump(&playerTexture01Jump, Vector2u(8, 1), 0.1f, 300.0f);
 	float deltaTime = 0.0f;
 	Clock clock;
 
