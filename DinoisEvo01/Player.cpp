@@ -1,6 +1,6 @@
 #include "Player.h"
 
-Player::Player(Texture* texture, Vector2u imageCount, float switchTime, float speed, float jumpspeed) :
+Player::Player(Texture* texture, Vector2u imageCount, float switchTime, float speed) :
 	animationplayer(texture, imageCount, switchTime)
 {
 	this->speed = speed;
