@@ -9,12 +9,6 @@ using namespace std;
 static const float VIEW_HIGHT = 1000.0f;
 static const float VIEW_WIDTH = 700.0f;
 
-void ResizeView(const RenderWindow& window, View& view)
-{
-	float aspectRatio = float(window.getSize().x) / float(window.getSize().y);
-	view.setSize(VIEW_HIGHT * aspectRatio, VIEW_WIDTH);
-}
-
 int main()
 {
 	srand(time(NULL));
@@ -29,13 +23,13 @@ int main()
 	BG01.setPosition(Vector2f(0.0f, 0.0f));
 
 	//setTexture
-	Texture playerTexture01;
-	playerTexture01.loadFromFile("player01Run.png");
+	Texture playerTextureRun;
+	playerTextureRun.loadFromFile("player01Run.png");
 	Texture BG01Texture;
 	BG01Texture.loadFromFile("BGForestNight.png");
 	BG01.setTexture(&BG01Texture);
 
-	Player player(&playerTexture01, Vector2u(8, 1), 0.05f,200.0f,300.0f);
+	Player player(&playerTextureRun, Vector2u(8, 1), 0.05f,200.0f,300.0f);
 
 	float deltaTime = 0.0f;
 	Clock clock;
@@ -45,7 +39,7 @@ int main()
 		deltaTime = clock.restart().asSeconds();
 		player.Update(deltaTime);
 
-		view.setCenter(player.Getposition().x, 350.0f);
+		view.setCenter(player.Getpositionx().x, 350.0f);
 
 		window.clear();
 		window.draw(BG01);

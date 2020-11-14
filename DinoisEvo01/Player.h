@@ -10,14 +10,13 @@ public:
 	
 	void Update(float deltatime);
 	void Draw(RenderWindow& window);
-	Vector2f Getposition() { return body.getPosition(); };
+	Vector2f Getpositionx() { return body.getPosition(); };
 
 private:
 	RectangleShape body;
-	Animation animation;
+	Animation animationplayer;
 	unsigned int row;
 	bool run;
-	int jump;
 	float speed;
 	float jumpspeed;
 };
