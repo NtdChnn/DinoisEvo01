@@ -4,7 +4,6 @@ Player::Player(Texture* texture, Vector2u imageCount, float switchTime, float sp
 	animationplayer(texture, imageCount, switchTime)
 {
 	this->speed = speed;
-	this->jumpspeed = jumpspeed;
 	row = 0;
 	run = false;
 	body.setSize(Vector2f(117.0f, 108.0f));
