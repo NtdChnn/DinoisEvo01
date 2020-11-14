@@ -23,13 +23,13 @@ int main()
 	BG01.setPosition(Vector2f(0.0f, 0.0f));
 
 	//setTexture
-	Texture playerTextureRun;
-	playerTextureRun.loadFromFile("player01Run.png");
+	Texture playerTexture01Run;
+	playerTexture01Run.loadFromFile("player01Run.png");
 	Texture BG01Texture;
 	BG01Texture.loadFromFile("BGForestNight.png");
 	BG01.setTexture(&BG01Texture);
 
-	Player player(&playerTextureRun, Vector2u(8, 1), 0.05f,200.0f,300.0f);
+	Player player(&playerTexture01Run, Vector2u(8, 1), 0.05f,200.0f,300.0f);
 
 	float deltaTime = 0.0f;
 	Clock clock;
