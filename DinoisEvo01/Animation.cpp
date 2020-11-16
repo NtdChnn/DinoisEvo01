@@ -1,9 +1,10 @@
 #include "Animation.h"
 
-Animation::Animation(Texture* texture, Vector2u imageCount, float switchTime)
+Animation::Animation(Texture* texture, Vector2u imageCount, float switchTime) 
 {
 	this->imageCount = imageCount;
 	this->switchTime = switchTime;
+	this->jump = jump;
 	totalTime = 0.0f;
 	currentImage.x = 0;
 
@@ -15,15 +16,20 @@ Animation::~Animation()
 {
 }
 
-void Animation::Update(int row, float deltaTime)
+void Animation::Update(int row, float deltaTime, int jump)
 {
 	currentImage.y = row;
 	totalTime += deltaTime;
 	if (totalTime >= switchTime)
 	{
 		totalTime -= switchTime;
-		currentImage.x++;
 
+		if ( jump == 1)
+		{
+			currentImage.x = 0;
+		}
+		printf("%d", jump);
+		currentImage.x++;
 		if (currentImage.x >= imageCount.x)
 		{
 			currentImage.x = 0;
