@@ -2,6 +2,7 @@
 #include <iostream>
 #include <windows.h>
 #include <sstream> 
+#include "Stage.h"
 #include "Player.h"
 using namespace sf;
 using namespace std;
@@ -17,32 +18,26 @@ int main()
 	
 	//view
 	View view(Vector2f(0.0f, 0.0f), Vector2f(VIEW_HIGHT, VIEW_WIDTH));
-	
-	//BG
-	RectangleShape BG01(Vector2f(7260, 700));
-	BG01.setPosition(Vector2f(0.0f, 0.0f));
 
-	//setTexture
+	//Stage01
 	Texture playerTexture01;
 	playerTexture01.loadFromFile("player01.png");
 	Texture BG01Texture;
-	BG01Texture.loadFromFile("BGForestNight.png");
-	BG01.setTexture(&BG01Texture);
+	BG01Texture.loadFromFile("BGdesert.png");
 
-	Player player(&playerTexture01 , Vector2u(8, 2), 0.05f, 300.0f,320.f);
+	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, &BG01Texture);
 	float deltaTime = 0.0f;
 	Clock clock;
 
 	while (window.isOpen())
 	{
 		deltaTime = clock.restart().asSeconds();
-		player.Update(deltaTime);
+		stage01.run(deltaTime);
 
-		view.setCenter(player.Getposition().x, 350.0f);
+		view.setCenter(stage01.Getplayerposition().x, 350.0f);
 
 		window.clear();
-		window.draw(BG01);
-		player.Draw(window);
+		stage01.Draw(window);
 		window.setView(view);
 		window.display();
 
