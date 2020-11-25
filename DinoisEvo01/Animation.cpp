@@ -28,7 +28,6 @@ void Animation::Update(int row, float deltaTime, int jump)
 		{
 			currentImage.x = 0;
 		}
-		printf("%d", jump);
 		currentImage.x++;
 		if (currentImage.x >= imageCount.x)
 		{

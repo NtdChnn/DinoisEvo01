@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include "Player.h"
+#include "Pause.h"
 using namespace sf;
 using namespace std;
 class Stage
@@ -17,5 +18,6 @@ private:
 	Player player;
 	RectangleShape BG;
 	RectangleShape obstruction;
+	Pause pause;
 };
 

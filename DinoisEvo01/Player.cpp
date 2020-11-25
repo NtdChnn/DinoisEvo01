@@ -1,5 +1,6 @@
 #include "Player.h"
 
+
 Player::Player(Texture* texture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed) :
 	animation(texture, imageCount, switchTime) , animationJump(texture, imageCount, 0.17f)
 {
@@ -19,20 +20,25 @@ Player::~Player()
 {
 }
 
+void Player::Setintpause(int intpause)
+{
+	this->intpause = intpause;
+}
+
 void Player::Update(float deltatime)
 {
 	Vector2f movement(0.0f,0.0f);
 
-	if (Keyboard::isKeyPressed(Keyboard::Key::A))
+	if (Keyboard::isKeyPressed(Keyboard::Key::A) && jump == 0 )
 	{
 		run = true;
 		jump = 1;
 	}
-	if (run == true)
+	if (run == true )
 	{
 		movement.x += speed * deltatime;
 	}
-	if (jump == 1)
+	if (jump == 1 )
 	{
 		row = 1;
 		movement.y -= jumpSpeed * deltatime;
@@ -55,7 +61,7 @@ void Player::Update(float deltatime)
 		animation.Update(row, deltatime, 0);
 		body.setTextureRect(animation.uvRect);
 	} 
-	else if(run == true)
+	else if(run == true )
 	{
 		animationJump.Update(1, deltatime , jump);
 		body.setTextureRect(animationJump.uvRect);
@@ -71,3 +77,5 @@ void Player::Draw(RenderWindow& window)
 {
 		window.draw(body);
 }
+
+

@@ -12,6 +12,7 @@ public:
 	void Draw(RenderWindow& window);
 	Vector2f Getposition() { return body.getPosition(); };
 	int Getjump() { return jump; };
+	void Setintpause(int intpause);
 
 private:
 	RectangleShape body;
@@ -24,5 +25,6 @@ private:
 	float jumpSpeed;
 	float deltaTime = 0.0f;
 	Clock clock;
+	int intpause;
 };
 

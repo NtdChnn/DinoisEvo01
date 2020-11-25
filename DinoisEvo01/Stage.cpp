@@ -1,7 +1,7 @@
 #include "Stage.h"
 
 Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, Texture* BGtexture) :
-	player(playertexture,imageCount,switchTime,speed,jumpSpeed)
+	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause()
 {
 	BG.setSize(Vector2f(13910,700));
 	BG.setPosition(Vector2f(0.0f, 0.0f));
@@ -16,7 +16,12 @@ Stage::~Stage()
 
 void Stage::run(float deltaTime)
 {
-	player.Update(deltaTime);
+	if (pause.Getintpause() == 0)
+	{
+		player.Update(deltaTime);
+	}
+	pause.GetPlayerPosition(player.Getposition());
+	pause.checkPause();
 }
 
 void Stage::Draw(RenderWindow& window)
@@ -24,4 +29,5 @@ void Stage::Draw(RenderWindow& window)
 	window.draw(BG);
 	window.draw(obstruction);
 	player.Draw(window);
+	pause.Draw(window);
 }
