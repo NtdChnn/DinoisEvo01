@@ -12,7 +12,6 @@ public:
 	void Draw(RenderWindow& window);
 	Vector2f Getposition() { return body.getPosition(); };
 	int Getjump() { return jump; };
-	void Setintpause(int intpause);
 
 private:
 	RectangleShape body;

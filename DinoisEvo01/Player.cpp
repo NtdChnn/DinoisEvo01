@@ -20,11 +20,6 @@ Player::~Player()
 {
 }
 
-void Player::Setintpause(int intpause)
-{
-	this->intpause = intpause;
-}
-
 void Player::Update(float deltatime)
 {
 	Vector2f movement(0.0f,0.0f);
