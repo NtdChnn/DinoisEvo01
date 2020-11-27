@@ -30,7 +30,8 @@ Pause::~Pause()
 
 void Pause::checkPause()
 {
-	printf("%d", intPause);
+	//CheckERROR//
+	//printf("%d", intPause);
 	if (Keyboard::isKeyPressed(Keyboard::Key::P) && run == true)
 	{
 		checkpress02 = checkpress01;

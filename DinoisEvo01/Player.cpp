@@ -24,6 +24,9 @@ void Player::Update(float deltatime)
 {
 	Vector2f movement(0.0f,0.0f);
 
+	//CheckERROR//
+	//printf("%d", jump);
+
 	if (Keyboard::isKeyPressed(Keyboard::Key::A) && jump == 0 )
 	{
 		run = true;

@@ -32,13 +32,13 @@ int main()
 	while (window.isOpen())
 	{
 		deltaTime = clock.restart().asSeconds();
-		stage01.run(deltaTime);
+		//stage01.run(deltaTime);
 
-		view.setCenter(stage01.Getplayerposition().x, 350.0f);
+		//view.setCenter(stage01.Getplayerposition().x, 350.0f);
 
 		window.clear();
-		stage01.Draw(window);
-		window.setView(view);
+		//stage01.Draw(window);
+		//window.setView(view);
 		window.display();
 
 		Event evnt;
