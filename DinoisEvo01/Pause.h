@@ -13,10 +13,12 @@ public:
 	int Getintpause() { return intPause; };
 	void Draw(RenderWindow& window);
 	void GetPlayerPosition(Vector2f(position));
+	void Setrun(bool run);
 private:
 	int intPause;
 	int checkpress01;
 	int checkpress02;
+	bool run;
 	Text pauseText01;
 	Text pauseText02;
 	Font gameFont;

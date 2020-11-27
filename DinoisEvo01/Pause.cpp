@@ -31,7 +31,7 @@ Pause::~Pause()
 void Pause::checkPause()
 {
 	printf("%d", intPause);
-	if (Keyboard::isKeyPressed(Keyboard::Key::P))
+	if (Keyboard::isKeyPressed(Keyboard::Key::P) && run == true)
 	{
 		checkpress02 = checkpress01;
 		checkpress01 = 1;
@@ -58,6 +58,11 @@ void Pause::GetPlayerPosition(Vector2f(position))
 	pauseBG.setPosition(position.x - 500, 0);
 	pauseText01.setPosition(position.x - 325, 200);
 	pauseText02.setPosition(position.x - 325, 300);
+}
+
+void Pause::Setrun(bool run)
+{
+	this->run = run;
 }
 
 void Pause::Draw(RenderWindow& window)

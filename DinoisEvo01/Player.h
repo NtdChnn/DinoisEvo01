@@ -12,6 +12,7 @@ public:
 	void Draw(RenderWindow& window);
 	Vector2f Getposition() { return body.getPosition(); };
 	int Getjump() { return jump; };
+	bool Getrun() { return run; };
 
 private:
 	RectangleShape body;

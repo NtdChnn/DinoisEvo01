@@ -21,6 +21,7 @@ void Stage::run(float deltaTime)
 		player.Update(deltaTime);
 	}
 	pause.GetPlayerPosition(player.Getposition());
+	pause.Setrun(player.Getrun());
 	pause.checkPause();
 }
 
