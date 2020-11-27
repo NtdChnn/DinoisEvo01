@@ -11,14 +11,24 @@ public:
 	void Draw(RenderWindow& window);
 private:
 	RectangleShape mainmenuBG;
+	Texture BGtexture;
+
 	Font gameFont;
+
 	RectangleShape menuBGtextNG;
+	Texture NGTexture;
 	Text menuTextNewGame;
+
 	RectangleShape menuBGtextLS;
+	Texture LSTexture;
 	Text menuTextLoadSave;
+
 	RectangleShape menuBGtextC;
+	Texture CTexture;
 	Text menuTextCharacter;
+
 	RectangleShape menuBGtextE;
+	Texture ETexture;
 	Text menuTextExit;
 };
 

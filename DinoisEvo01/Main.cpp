@@ -4,6 +4,7 @@
 #include <sstream> 
 #include "Stage.h"
 #include "Player.h"
+#include "Mainmenu.h"
 using namespace sf;
 using namespace std;
 
@@ -26,17 +27,23 @@ int main()
 	BG01Texture.loadFromFile("BGdesert.png");
 
 	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, &BG01Texture);
+
+	Mainmenu mainmenu;
+
 	float deltaTime = 0.0f;
 	Clock clock;
 
 	while (window.isOpen())
 	{
 		deltaTime = clock.restart().asSeconds();
-		//stage01.run(deltaTime);
 
+		
+
+		//stage01.run(deltaTime);
 		//view.setCenter(stage01.Getplayerposition().x, 350.0f);
 
 		window.clear();
+		mainmenu.Draw(window);
 		//stage01.Draw(window);
 		//window.setView(view);
 		window.display();
