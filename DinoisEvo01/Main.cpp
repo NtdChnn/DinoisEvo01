@@ -37,7 +37,6 @@ int main()
 	{
 		deltaTime = clock.restart().asSeconds();
 
-		
 
 		//stage01.run(deltaTime);
 		//view.setCenter(stage01.Getplayerposition().x, 350.0f);

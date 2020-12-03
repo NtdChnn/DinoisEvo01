@@ -8,7 +8,11 @@ public:
 
 	Mainmenu();
 	~Mainmenu();
+
+	void Run();
 	void Draw(RenderWindow& window);
+	void Updatemousepos(RenderWindow& window);
+
 private:
 	RectangleShape mainmenuBG;
 	Texture BGtexture;
@@ -30,5 +34,8 @@ private:
 	RectangleShape menuBGtextE;
 	Texture ETexture;
 	Text menuTextExit;
+
+	Vector2i mousePos;
+	Vector2f mousePosF;
 };
 

@@ -1,7 +1,9 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <windows.h>
 #include "Player.h"
 #include "Pause.h"
+#include "Mainmenu.h"
 using namespace sf;
 using namespace std;
 class Stage
@@ -19,5 +21,6 @@ private:
 	RectangleShape BG;
 	RectangleShape obstruction;
 	Pause pause;
+	
 };
 
