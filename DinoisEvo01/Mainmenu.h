@@ -12,10 +12,13 @@ public:
 	void Run();
 	void Draw(RenderWindow& window);
 	void Updatemousepos(RenderWindow& window);
+	int GetChangeWindow() { return forChangeWindow; };
 
 private:
 	RectangleShape mainmenuBG;
 	Texture BGtexture;
+
+	int forChangeWindow = 0;
 
 	Font gameFont;
 
@@ -34,6 +37,7 @@ private:
 	RectangleShape menuBGtextE;
 	Texture ETexture;
 	Text menuTextExit;
+	int exit = 0;
 
 	Vector2i mousePos;
 	Vector2f mousePosF;

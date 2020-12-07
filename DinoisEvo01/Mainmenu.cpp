@@ -2,38 +2,34 @@
 
 Mainmenu::Mainmenu()
 {
+
 	mainmenuBG.setSize(Vector2f(1000.0f, 700.0f));
-	mainmenuBG.setFillColor(Color::Black);
-	//BGtexture.loadFromFile("");
-	//mainmenuBG.setTexture(&BGtexture);
+	BGtexture.loadFromFile("BGforMenu.png");
+	mainmenuBG.setTexture(&BGtexture);
 	mainmenuBG.setOrigin(Vector2f(0.0f, 0.0f));
 	mainmenuBG.setPosition(Vector2f(0.0f, 0.0f));
 
 	menuBGtextNG.setSize(Vector2f(150.0f, 50.0f));
-	menuBGtextNG.setFillColor(Color::Magenta);
-	//NGTexture.loadFromFile("");
-	//menuBGtextNG.setTexture(&NGTexture);
+	NGTexture.loadFromFile("BGforMenuNG.png");
+	menuBGtextNG.setTexture(&NGTexture);
 	menuBGtextNG.setOrigin(Vector2f(50.0f, 25.0f));
 	menuBGtextNG.setPosition(Vector2f(250.0f, 350.0f));
 
 	menuBGtextLS.setSize(Vector2f(150.0f, 50.0f));
-	menuBGtextLS.setFillColor(Color::Red);
-	//LSTexture.loadFromFile("");
-	//menuBGtextLS.setTexture(&LSTexture);
+	LSTexture.loadFromFile("BGforMenuLS.png");
+	menuBGtextLS.setTexture(&LSTexture);
 	menuBGtextLS.setOrigin(Vector2f(50.0f, 25.0f));
 	menuBGtextLS.setPosition(Vector2f(250.0f, 450.0f));
 
 	menuBGtextC.setSize(Vector2f(150.0f, 50.0f));
-	menuBGtextC.setFillColor(Color::Blue);
-	//CTexture.loadFromFile("");
-	//menuBGtextC.setTexture(&CTexture);
+	CTexture.loadFromFile("BGforMenuC.png");
+	menuBGtextC.setTexture(&CTexture);
 	menuBGtextC.setOrigin(Vector2f(50.0f, 25.0f));
 	menuBGtextC.setPosition(Vector2f(750.0f, 350.0f));
 
 	menuBGtextE.setSize(Vector2f(150.0f, 50.0f));
-	menuBGtextE.setFillColor(Color::White);
-	//ETexture.loadFromFile("");
-	//menuBGtextE.setTexture(&ETexture);
+	ETexture.loadFromFile("BGforMenuE.png");
+	menuBGtextE.setTexture(&ETexture);
 	menuBGtextE.setOrigin(Vector2f(50.0f, 25.0f));
 	menuBGtextE.setPosition(Vector2f(500.0f, 550.0f));
 
@@ -41,13 +37,43 @@ Mainmenu::Mainmenu()
 
 Mainmenu::~Mainmenu()
 {
-	if (this->menuBGtextNG.getGlobalBounds().contains(mousePos))
 }
 
 
 void Mainmenu::Run()
 {
-
+	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF))
+	{
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{ 
+			//Checkerror//
+			printf("%d",forChangeWindow);
+			forChangeWindow = 1;
+		}
+	}
+	if (this->menuBGtextLS.getGlobalBounds().contains(mousePosF))
+	{
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			printf("Load Save");
+			forChangeWindow = 2;
+		}
+	}
+	if (this->menuBGtextC.getGlobalBounds().contains(mousePosF))
+	{
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			printf("Character");
+			forChangeWindow = 3;
+		}
+	}
+	if (this->menuBGtextE.getGlobalBounds().contains(mousePosF))
+	{
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			exit = 1;
+		}
+	}
 }
 
 void Mainmenu::Draw(RenderWindow& window)
@@ -57,6 +83,8 @@ void Mainmenu::Draw(RenderWindow& window)
 	window.draw(menuBGtextLS);
 	window.draw(menuBGtextC);
 	window.draw(menuBGtextE);
+	if (exit == 1)
+	{ window.close(); }
 }
 
 void Mainmenu::Updatemousepos(RenderWindow& window)
