@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mainmenu.cpp" />
     <ClCompile Include="Obstruction.cpp" />
@@ -155,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="GameOver.h" />
     <ClInclude Include="Mainmenu.h" />
     <ClInclude Include="Obstruction.h" />
     <ClInclude Include="Pause.h" />
