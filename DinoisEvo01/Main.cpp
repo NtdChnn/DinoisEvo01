@@ -63,15 +63,6 @@ int main()
 		}
 		
 
-		//stage01.run(deltaTime);
-		//view.setCenter(stage01.Getplayerposition().x, 350.0f);
-
-		//window.clear();
-		//mainmenu.Draw(window);
-		//stage01.Draw(window);
-		//window.setView(view);
-		//window.display();
-
 		Event evnt;
 		while (window.pollEvent(evnt))
 		{
