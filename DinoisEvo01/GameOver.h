@@ -6,10 +6,10 @@ using namespace sf;
 class GameOver
 {
 public:
-	GameOver(int life);
+	GameOver();
 	~GameOver();
 
-	void CheckGameOver();
+	void CheckGameOver(int life);
 	void Draw(RenderWindow& window);
 	bool statusGame() { return SGameover; };
 	void GetplayerPosition(Vector2f playerPosition);
@@ -20,6 +20,5 @@ private:
 	Text gameOverText;
 	Text pressRtoRestartText;
 
-	int life;
 	bool SGameover = false;
 };

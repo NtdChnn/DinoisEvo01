@@ -13,6 +13,7 @@ public:
 	Vector2f Getposition() { return body.getPosition(); };
 	int Getjump() { return jump; };
 	bool Getrun() { return run; };
+	FloatRect GetGlobalBounds() { return body.getGlobalBounds(); };
 
 private:
 	RectangleShape body;

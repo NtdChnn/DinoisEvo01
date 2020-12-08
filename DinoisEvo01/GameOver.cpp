@@ -1,8 +1,7 @@
 #include "GameOver.h"
 
-GameOver::GameOver(int life)
+GameOver::GameOver()
 {
-	this->life = life;
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 	gameOverText.setFont(gameFont);
 	gameOverText.setFillColor(Color::Black);
@@ -25,7 +24,7 @@ GameOver::~GameOver()
 {
 }
 
-void GameOver::CheckGameOver()
+void GameOver::CheckGameOver(int life)
 {
 	if (life == 0)
 	{
@@ -35,7 +34,7 @@ void GameOver::CheckGameOver()
 
 void GameOver::Draw(RenderWindow& window)
 {
-	if (SGameover = true)
+	if (SGameover == true)
 	{
 		window.draw(gameOverBG);
 		window.draw(gameOverText);

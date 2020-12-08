@@ -11,7 +11,7 @@ using namespace std;
 class Stage
 {
 public:
-	Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, Texture* BGtexture, Texture* Ob01texture);
+	Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, Texture* BGtexture, Texture* Ob01texture, int frequency);
 	~Stage();
 
 	void run(float deltaTime);
@@ -24,6 +24,7 @@ private:
 	RectangleShape BG;
 	Obstruction Ob01;
 	Pause pause;
-	int life = 1;
+	GameOver gameover;
+	int life;
 };
 
