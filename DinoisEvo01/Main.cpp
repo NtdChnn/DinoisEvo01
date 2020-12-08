@@ -30,9 +30,9 @@ int main()
 	Texture BG01Texture;
 	BG01Texture.loadFromFile("BGdesert.png");
 	//&Rock02texture, Vector2f(177.0f,56.0f), Vector2f(1851.0f,501.0f)
-	Texture Rock02texture;
-	Rock02texture.loadFromFile("rock_02bgremove.png");
-	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, &BG01Texture,&Rock02texture,8);
+	Texture Rocktexture;
+	Rocktexture.loadFromFile("rockrealrockremoveBG.png");
+	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, &BG01Texture,&Rocktexture,8);
 
 	float deltaTime = 0.0f;
 	Clock clock;

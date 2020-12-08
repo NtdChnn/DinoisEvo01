@@ -1,7 +1,7 @@
 #include "Stage.h"
 
 Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, Texture* BGtexture, Texture* Ob01texture, int frequency) :
-	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(50.0f, 50.0f), frequency), playerhitbox(Vector2f(80.0f,40.0f),player.GetOrigin())
+	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(70.0f, 50.0f), frequency), playerhitbox(Vector2f(80.0f,40.0f),player.GetOrigin())
 {
 	srand(time(NULL));
 	BG.setSize(Vector2f(13910,700));
