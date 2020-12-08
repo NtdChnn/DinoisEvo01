@@ -6,6 +6,7 @@
 #include "Mainmenu.h"
 #include "Obstruction.h"
 #include "GameOver.h"
+#include "PlayerHitBox.h"
 using namespace sf;
 using namespace std;
 class Stage
@@ -21,6 +22,7 @@ public:
 
 private:
 	Player player;
+	PlayerHitBox playerhitbox;
 	RectangleShape BG;
 	Obstruction Ob01;
 	Pause pause;

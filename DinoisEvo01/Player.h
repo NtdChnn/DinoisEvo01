@@ -14,6 +14,7 @@ public:
 	int Getjump() { return jump; };
 	bool Getrun() { return run; };
 	FloatRect GetGlobalBounds() { return body.getGlobalBounds(); };
+	Vector2f GetOrigin() { return body.getOrigin(); };
 
 private:
 	RectangleShape body;

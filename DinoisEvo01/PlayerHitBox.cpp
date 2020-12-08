@@ -1,7 +1,8 @@
 #include "PlayerHitBox.h"
-PlayerHitBox::PlayerHitBox(Vector2f size)
+PlayerHitBox::PlayerHitBox(Vector2f size, Vector2f origin)
 {
 	playerHitBox.setSize(size);
+	playerHitBox.setOrigin(origin);
 }
 
 PlayerHitBox::~PlayerHitBox()
@@ -10,5 +11,10 @@ PlayerHitBox::~PlayerHitBox()
 
 void PlayerHitBox::Update(Vector2f playerposition)
 {
-	playerHitBox.setPosition(playerposition);
+	playerHitBox.setPosition(playerposition.x+10,playerposition.y+40);
+}
+
+void PlayerHitBox::Draw(RenderWindow& window)
+{
+	window.draw(playerHitBox);
 }
