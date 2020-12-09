@@ -56,7 +56,7 @@ void Mainmenu::Run()
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
 			printf("Load Save");
-			forChangeWindow = 2;
+			forChangeWindow = 20;
 		}
 	}
 	if (this->menuBGtextC.getGlobalBounds().contains(mousePosF))
@@ -64,7 +64,7 @@ void Mainmenu::Run()
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
 			printf("Character");
-			forChangeWindow = 3;
+			forChangeWindow = 30;
 		}
 	}
 	if (this->menuBGtextE.getGlobalBounds().contains(mousePosF))
