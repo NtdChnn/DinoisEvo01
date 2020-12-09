@@ -41,6 +41,7 @@ void Stage::run(float deltaTime)
 		gameover.CheckGameOver(Ob01.Getlife());
 
 		Ob01.Run(player.Getposition());
+		Ob01.UpdateLife(life);
 		Ob01.Checkcollision(playerhitbox.GetGlobalBounds());
 
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());

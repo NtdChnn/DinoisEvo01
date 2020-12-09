@@ -54,10 +54,10 @@ void Magnet::Draw(RenderWindow& window)
 	}
 }
 
-void Magnet::SetpositionUse(Vector2f playerposition,Vector2f playerorgin, bool use)
+void Magnet::SetpositionUse(Vector2f playerposition,Vector2f playerorigin, bool use)
 {
 	this->use = use;
-	magnetpic0.setOrigin(playerorgin);
+	magnetpic0.setOrigin(playerorigin);
 	magnetpic0.setPosition(playerposition.x, playerposition.y - 30);
 }
 

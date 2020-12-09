@@ -50,6 +50,11 @@ void Obstruction::Run(Vector2f playerPosition)
 	}
 }
 
+void Obstruction::UpdateLife(int life)
+{
+	this->life = life;
+}
+
 void Obstruction::Restart()
 {
 	obstrutction.setSize(size);

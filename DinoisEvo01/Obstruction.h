@@ -11,6 +11,7 @@ public:
 	void Draw(RenderWindow& window);
 	bool Checkcollision(FloatRect player);
 	void Run(Vector2f playerPosition);
+	void UpdateLife(int life);
 	int Getlife() { return life; };
 	Vector2f GetPosition() { return obstrutction.getPosition(); };
 	FloatRect GetGlobleBounds() { return obstrutction.getGlobalBounds(); };

@@ -157,6 +157,7 @@
     <ClCompile Include="PlayerHitBox.cpp" />
     <ClCompile Include="Restart.cpp" />
     <ClCompile Include="ScoreToken.cpp" />
+    <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>
@@ -172,6 +173,7 @@
     <ClInclude Include="PlayerHitBox.h" />
     <ClInclude Include="Restart.h" />
     <ClInclude Include="ScoreToken.h" />
+    <ClInclude Include="Shield.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>

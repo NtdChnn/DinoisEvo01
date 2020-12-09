@@ -30,7 +30,7 @@ private:
 	GameOver gameover;
 	Token token;
 	Restart restart;
-	int life;
+	int life = 1 ;
 	float distance;
 };
 
