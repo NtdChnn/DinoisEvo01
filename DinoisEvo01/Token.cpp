@@ -9,12 +9,12 @@ Token::Token(int numOfToken, float distance) :
 	veggieTexture.loadFromFile("vegetable.png");
 	tokenVeggie.setTexture(&veggieTexture);
 	tokenVeggie.setSize(Vector2f(40.0f, 40.0f));
-	tokenMeat.setPosition(Vector2f(((distance-50) / numOfToken)+((distance / numOfToken)/2)-100,500.0f));
+	tokenMeat.setPosition(Vector2f(((distance-100) / numOfToken)+((distance / numOfToken)/2)-250,500.0f));
 
 	meatTexture.loadFromFile("meat.png");
 	tokenMeat.setTexture(&meatTexture);
 	tokenMeat.setSize(Vector2f(40.0f, 40.0f));
-	tokenVeggie.setPosition(Vector2f(((distance-50) / numOfToken),500.0f));
+	tokenVeggie.setPosition(Vector2f(((distance-100) / numOfToken)-125,500.0f));
 }
 
 Token::~Token()
@@ -23,11 +23,11 @@ Token::~Token()
 
 void Token::Draw(RenderWindow& window)
 {
-	if (tokenMeat.getPosition().x < distance)
+	if (numOfToken > numOfMeat)
 	{
 		window.draw(tokenMeat);
 	}
-	if (tokenVeggie.getPosition().x < distance)
+	if (numOfToken > numOfVeggie)
 	{
 		window.draw(tokenVeggie);
 	}
@@ -40,7 +40,8 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 	{
 		//Check Error//
 		//printf("token meat MOVE ! !");
-		tokenMeat.move(Vector2f((distance-50) / numOfToken, 0));
+		tokenMeat.move(Vector2f((distance-100) / numOfToken, 0));
+		numOfMeat++;
 	}
 	if (tokenMeat.getGlobalBounds().intersects(playerGlobleBounds))
 	{
@@ -49,9 +50,11 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 			//Check Error//
 			//printf("token meat COLLECT! !");
 			collisionMeat = true;
-			tokenMeat.move(Vector2f((distance-50) / numOfToken, 0));
+			tokenMeat.move(Vector2f((distance-100) / numOfToken, 0));
 			Meat++;
-			printf("%d", Meat);
+			numOfMeat++;
+			//Check Error//
+			//printf("%d", Meat);
 		}
 	}
 	else collisionMeat = false;
@@ -61,6 +64,7 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 		//Check Error//
 		//printf("token Veggie MOVE ! !");
 		tokenVeggie.move(Vector2f((distance - 50) / numOfToken, 0));
+		numOfVeggie++;
 	}
 	if (tokenVeggie.getGlobalBounds().intersects(playerGlobleBounds))
 	{
@@ -71,6 +75,7 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 			collisionVeggie = true;
 			tokenVeggie.move(Vector2f((distance - 50) / numOfToken, 0));
 			Veggie++;
+			numOfVeggie++;
 			//Check Error//
 			//printf("%d", Veggie);
 		}

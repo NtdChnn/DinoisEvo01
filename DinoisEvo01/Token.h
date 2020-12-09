@@ -31,6 +31,8 @@ private:
 
 	int Meat = 0;
 	int Veggie = 0;
+	int numOfMeat = 0;
+	int numOfVeggie = 0;
 
 	bool collisionMeat = false;
 	bool collisionVeggie = false;
