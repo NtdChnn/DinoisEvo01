@@ -18,6 +18,7 @@ ScoreToken::ScoreToken()
 
 	meatTexture.loadFromFile("meat.png");
 	tokenMeat.setTexture(&meatTexture);
+	tokenMeat.setSize(Vector2f(40.0f, 40.0f));
 
 	tokenVeggieX.setFont(gameFont);
 	tokenVeggieX.setOutlineColor(Color::White);
@@ -34,6 +35,7 @@ ScoreToken::ScoreToken()
 
 	veggieTexture.loadFromFile("vegetable.png");
 	tokenVeggie.setTexture(&veggieTexture);
+	tokenVeggie.setSize(Vector2f(40.0f, 40.0f));
 }
 
 ScoreToken::~ScoreToken()
@@ -53,20 +55,26 @@ void ScoreToken::Draw(RenderWindow& window)
 
 void ScoreToken::UpdatPosition(Vector2f playerPosition)
 {
-	tokenMeat.setPosition(playerPosition.x+500,50.0f);
-	tokenMeatScore.setPosition(playerPosition.x + 580, 50.0f);
-	tokenMeatX.setPosition(playerPosition.x + 540, 50.0f);
+	tokenMeat.setPosition(playerPosition.x+300,45.0f);
+	tokenMeatScore.setPosition(playerPosition.x+400, 50.0f);
+	tokenMeatX.setPosition(playerPosition.x+360, 50.0f);
 
-	tokenVeggie.setPosition(playerPosition.x + 500, 50.0f);
-	tokenVeggieScore.setPosition(playerPosition.x + 580, 50.0f);
-	tokenVeggieX.setPosition(playerPosition.x + 540, 50.0f);
+	tokenVeggie.setPosition(playerPosition.x+300, 95.0f);
+	tokenVeggieScore.setPosition(playerPosition.x+400, 100.0f);
+	tokenVeggieX.setPosition(playerPosition.x+360, 100.0f);
 }
 
 void ScoreToken::UpdateScore(int tokenMeat, int tokenVeggie)
 {
+	//Check ERROR//
+	//printf("%d", tokenMeat);
+	stringstream meatScoreShow;
 	meatScoreShow << tokenMeat;
 	tokenMeatScore.setString(meatScoreShow.str().c_str());
 
+	//Check ERROR//
+	//printf("%d", tokenVeggie);
+	stringstream veggieScoreShow;
 	veggieScoreShow << tokenVeggie;
 	tokenVeggieScore.setString(veggieScoreShow.str().c_str());
 }

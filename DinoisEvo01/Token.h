@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <sstream> 
+#include "ScoreToken.h"
 using namespace sf;
 class Token
 {
@@ -33,5 +34,7 @@ private:
 
 	bool collisionMeat = false;
 	bool collisionVeggie = false;
+
+	ScoreToken scoretoken;
 };
 

@@ -19,14 +19,12 @@ private:
 	RectangleShape tokenMeat;
 	Text tokenMeatScore;
 	int scoreMeatToken;
-	stringstream meatScoreShow;
 	Text tokenMeatX;
 
 	Texture veggieTexture;
 	RectangleShape tokenVeggie;
 	Text tokenVeggieScore;
 	int scoreVeggieToken;
-	stringstream veggieScoreShow;
 	Text tokenVeggieX;
 
 };

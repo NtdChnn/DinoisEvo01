@@ -1,6 +1,7 @@
 #include "Token.h"
 
-Token::Token(int numOfToken, float distance)
+Token::Token(int numOfToken, float distance) :
+	scoretoken()
 {
 	this->numOfToken = numOfToken;
 	this->distance = distance;
@@ -30,6 +31,7 @@ void Token::Draw(RenderWindow& window)
 	{
 		window.draw(tokenVeggie);
 	}
+	scoretoken.Draw(window);
 }
 
 void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
@@ -37,7 +39,7 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 	if (playerPosition.x > tokenMeat.getPosition().x + 550)
 	{
 		//Check Error//
-		printf("token meat MOVE ! !");
+		//printf("token meat MOVE ! !");
 		tokenMeat.move(Vector2f((distance-50) / numOfToken, 0));
 	}
 	if (tokenMeat.getGlobalBounds().intersects(playerGlobleBounds))
@@ -45,10 +47,11 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 		if (collisionMeat == false)
 		{
 			//Check Error//
-			printf("token meat COLLECT! !");
+			//printf("token meat COLLECT! !");
 			collisionMeat = true;
 			tokenMeat.move(Vector2f((distance-50) / numOfToken, 0));
 			Meat++;
+			printf("%d", Meat);
 		}
 	}
 	else collisionMeat = false;
@@ -56,7 +59,7 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 	if (playerPosition.x > tokenVeggie.getPosition().x + 550)
 	{
 		//Check Error//
-		printf("token Veggie MOVE ! !");
+		//printf("token Veggie MOVE ! !");
 		tokenVeggie.move(Vector2f((distance - 50) / numOfToken, 0));
 	}
 	if (tokenVeggie.getGlobalBounds().intersects(playerGlobleBounds))
@@ -64,13 +67,18 @@ void Token::Update(FloatRect playerGlobleBounds, Vector2f playerPosition)
 		if (collisionVeggie == false)
 		{
 			//Check Error//
-			printf("token Veggie COLLECT! !");
+			//printf("token Veggie COLLECT! !");
 			collisionVeggie = true;
 			tokenVeggie.move(Vector2f((distance - 50) / numOfToken, 0));
 			Veggie++;
+			//Check Error//
+			//printf("%d", Veggie);
 		}
 	}
 	else collisionVeggie = false;
+
+	scoretoken.UpdateScore(Meat, Veggie);
+	scoretoken.UpdatPosition(playerPosition);
 }
 
 void Token::CheckOb(FloatRect ObGlobleBounds)
