@@ -11,7 +11,7 @@ PlayerHitBox::~PlayerHitBox()
 
 void PlayerHitBox::Update(Vector2f playerposition)
 {
-	playerHitBox.setPosition(playerposition.x+10,playerposition.y+40);
+	playerHitBox.setPosition(playerposition.x+20,playerposition.y+40);
 }
 
 void PlayerHitBox::Draw(RenderWindow& window)

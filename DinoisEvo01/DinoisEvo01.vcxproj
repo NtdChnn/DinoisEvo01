@@ -154,6 +154,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHitBox.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHitBox.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

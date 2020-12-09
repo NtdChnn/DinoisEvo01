@@ -1,11 +1,11 @@
 #include "Obstruction.h"
 
-Obstruction::Obstruction(Texture* textureOb, Vector2f size, int frequency)
+Obstruction::Obstruction(Texture* textureOb, Vector2f size , Vector2f position , int frequency)
 {
 	srand(time(NULL));
 	obstrutction.setTexture(textureOb);
 	obstrutction.setSize(size);
-	obstrutction.setPosition(1500, 500);
+	obstrutction.setPosition(position);
 	this->frequency = frequency;
 }
 
@@ -34,7 +34,7 @@ bool Obstruction::Checkcollision(FloatRect player)
 
 void Obstruction::Run(Vector2f playerPosition)
 {
-	float movex = 50 * (rand() % frequency);
+	float movex = 100 * (rand() % frequency);
 	if (playerPosition.x > obstrutction.getPosition().x + 650)
 	{
 		//Check Error//
