@@ -48,3 +48,8 @@ void GameOver::GetplayerPosition(Vector2f playerPosition)
 	gameOverText.setPosition(playerPosition.x - 325, 200);
 	pressRtoRestartText.setPosition(playerPosition.x - 325, 300);
 }
+
+void GameOver::Restart()
+{
+	SGameover = false;
+}

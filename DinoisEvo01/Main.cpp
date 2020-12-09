@@ -35,7 +35,7 @@ int main()
 	//&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
 	Texture Cactus01Texture;
 	Cactus01Texture.loadFromFile("cactus01-removebg.png");
-	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 5000, &BG01Texture,&Cactus01Texture,3);
+	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 8000, &BG01Texture,&Cactus01Texture,5,7);
 
 	float deltaTime = 0.0f;
 	Clock clock;

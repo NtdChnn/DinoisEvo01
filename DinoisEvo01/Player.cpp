@@ -4,6 +4,7 @@
 Player::Player(Texture* texture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed) :
 	animation(texture, imageCount, switchTime) , animationJump(texture, imageCount, 0.17f)
 {
+	life = 1;
 	this->speed = speed;
 	this->jumpSpeed = jumpSpeed;
 	row = 0;
@@ -74,6 +75,23 @@ void Player::Update(float deltatime)
 void Player::Draw(RenderWindow& window)
 {
 		window.draw(body);
+}
+
+void Player::Restart()
+{
+	life = 1;
+	row = 0;
+	run = true;
+	jump = 0;
+	body.setSize(Vector2f(117.0f, 108.0f));
+	body.setOrigin(350.0f, -105.0f);
+	body.setPosition(Vector2f(500.0f, 350.0f));
+	deltaTime = clock.restart().asSeconds();
+}
+
+void Player::Life(int life)
+{
+	this->life = life;
 }
 
 

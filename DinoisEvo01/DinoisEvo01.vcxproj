@@ -153,6 +153,7 @@
     <ClCompile Include="Pause.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerHitBox.cpp" />
+    <ClCompile Include="Restart.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="Pause.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerHitBox.h" />
+    <ClInclude Include="Restart.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>

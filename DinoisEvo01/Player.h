@@ -15,12 +15,15 @@ public:
 	bool Getrun() { return run; };
 	FloatRect GetGlobalBounds() { return body.getGlobalBounds(); };
 	Vector2f GetOrigin() { return body.getOrigin(); };
+	void Restart();
+	void Life(int life);
 
 private:
 	RectangleShape body;
 	Animation animation;
 	Animation animationJump;
 	int jump;
+	int life;
 	unsigned int row;
 	bool run;
 	float speed;

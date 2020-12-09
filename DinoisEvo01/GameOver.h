@@ -13,6 +13,7 @@ public:
 	void Draw(RenderWindow& window);
 	bool statusGame() { return SGameover; };
 	void GetplayerPosition(Vector2f playerPosition);
+	void Restart();
 
 private:
 	RectangleShape gameOverBG;

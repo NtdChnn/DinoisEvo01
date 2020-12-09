@@ -1,12 +1,15 @@
 #include "Obstruction.h"
 
-Obstruction::Obstruction(Texture* textureOb, Vector2f size , Vector2f position , int frequency)
+Obstruction::Obstruction(Texture* textureOb, Vector2f size , Vector2f position , int frequency, float distance)
 {
 	srand(time(NULL));
 	obstrutction.setTexture(textureOb);
 	obstrutction.setSize(size);
 	obstrutction.setPosition(position);
 	this->frequency = frequency;
+	this->size = size;
+	this->position = position;
+	this->distance = distance;
 }
 
 Obstruction::~Obstruction()
@@ -15,7 +18,11 @@ Obstruction::~Obstruction()
 
 void Obstruction::Draw(RenderWindow& window)
 {
-	window.draw(obstrutction);
+	if (obstrutction.getPosition().x < distance)
+	{
+		window.draw(obstrutction);
+	}
+	
 }
 
 bool Obstruction::Checkcollision(FloatRect player)
@@ -41,4 +48,11 @@ void Obstruction::Run(Vector2f playerPosition)
 		//printf("Ob MOVE ! !");
 		obstrutction.move(Vector2f(1100 + movex,0));
 	}
+}
+
+void Obstruction::Restart()
+{
+	obstrutction.setSize(size);
+	obstrutction.setPosition(position);
+	life = 1;
 }
