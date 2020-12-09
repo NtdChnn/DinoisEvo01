@@ -3,7 +3,6 @@
 #include <windows.h>
 #include <sstream> 
 #include "Stage.h"
-#include "Player.h"
 #include "Mainmenu.h"
 using namespace sf;
 using namespace std;

@@ -17,6 +17,7 @@ public:
 	void Update(FloatRect playerGlobleBounds, Vector2f playerPosition);
 	void CheckOb(FloatRect ObGlobleBounds);
 	void Restart();
+	void Magnet(Vector2f playerposition);
 
 private:
 
@@ -36,6 +37,8 @@ private:
 
 	bool collisionMeat = false;
 	bool collisionVeggie = false;
+	bool magnetMeat = false;
+	bool magnetVeggie = false;
 
 	ScoreToken scoretoken;
 };

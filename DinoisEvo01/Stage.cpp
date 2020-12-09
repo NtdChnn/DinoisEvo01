@@ -45,6 +45,7 @@ void Stage::run(float deltaTime)
 
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());
 		token.CheckOb(Ob01.GetGlobleBounds());
+		//token.Magnet(player.Getposition());
 
 		restart.Check(gameover.statusGame());
 }
