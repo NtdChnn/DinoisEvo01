@@ -18,6 +18,8 @@ public:
 	void CheckOb(FloatRect ObGlobleBounds);
 	void Restart();
 	void Magnet(Vector2f playerposition);
+	FloatRect GetGlobleBoundsTokenMeat() { return tokenMeat.getGlobalBounds(); };
+	FloatRect GetGlobleBoundsTokenVeggie() { return tokenVeggie.getGlobalBounds(); };
 
 private:
 

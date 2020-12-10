@@ -32,6 +32,10 @@ Magnet::~Magnet()
 
 void Magnet::Draw(RenderWindow& window)
 {
+	if (show == true && magnetpic.getPosition().x < distance)
+	{
+		window.draw(magnetpic);
+	}
 	if (use == true)
 	{
 		window.draw(magnetpic0);
@@ -74,6 +78,26 @@ void Magnet::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, i
 	magnetpic4.setPosition(playerposition.x - 100, 50);
 }
 
+void Magnet::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance)
+{
+	this->distance = distance;
+	if (show == false)
+	{
+		magnetpic.setPosition(0, 0);
+	}
+	if (show == true)
+	{
+		do
+		{
+			magnetpic.setPosition(playerposition.x + 500, 500);
+		} while (true);
+		if (magnetpic.getGlobalBounds().intersects(globleBoundsMeat) || magnetpic.getGlobalBounds().intersects(globleBoundsVeggie) || magnetpic.getGlobalBounds().intersects(globleBoundsOb))
+		{
+			magnetpic.move(50, 0);
+		}
+	}
+}
+
 void Magnet::Check(FloatRect playerGlobleBounds, int numItem)
 {
 	if (numItem < 4 && magnetpic.getGlobalBounds().intersects(playerGlobleBounds))
@@ -83,9 +107,21 @@ void Magnet::Check(FloatRect playerGlobleBounds, int numItem)
 			collision = true;
 			numItem++;
 			numMagnet++;
+			show = false;
 		}
 	}
 	else collision = false;
 
 	this->numItem = numItem;
+}
+
+void Magnet::Random(int percent)
+{ 
+	if (show == false)
+	{
+		if (rand() % 100 <= percent)
+		{
+			show = true;
+		}
+	}
 }

@@ -1,7 +1,7 @@
 #include "Stage.h"
 
 Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken) :
-	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(44.3, 74.0f),Vector2f(1000,470), frequency, distance), playerhitbox(Vector2f(60.0f,40.0f),player.GetOrigin()), token(numOfToken,distance), restart()
+	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(44.3, 74.0f),Vector2f(1000,470), frequency, distance), playerhitbox(Vector2f(60.0f,40.0f),player.GetOrigin()), token(numOfToken,distance), restart(), item()
 {
 	this->distance = distance;
 	srand(time(NULL));
@@ -47,6 +47,8 @@ void Stage::run(float deltaTime)
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());
 		token.CheckOb(Ob01.GetGlobleBounds());
 		//token.Magnet(player.Getposition());
+
+		item.Check(player.Getposition());
 
 		restart.Check(gameover.statusGame());
 }

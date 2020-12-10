@@ -2,7 +2,9 @@
 
 Shield::Shield()
 {
-	shieldTexture.loadFromFile("shield - removebg - preview.png");
+	srand(time(NULL));
+
+	shieldTexture.loadFromFile("shield.png");
 
 	shieldpic.setTexture(&shieldTexture);
 	shieldpic.setSize(Vector2f(40, 40));
@@ -21,7 +23,6 @@ Shield::Shield()
 
 	shieldpic4.setTexture(&shieldTexture);
 	shieldpic4.setSize(Vector2f(40, 40));
-
 }
 
 Shield::~Shield()
@@ -30,23 +31,27 @@ Shield::~Shield()
 
 void Shield::Draw(RenderWindow& window)
 {
+	if (show == true && shieldpic.getPosition().x < distance)
+	{
+		window.draw(shieldpic);
+	}
 	if (use == true)
 	{
 		window.draw(shieldpic0);
 	}
-	if (slot1 == 1)
+	if (slot1 == 2)
 	{
 		window.draw(shieldpic1);
 	}
-	if (slot2 == 1)
+	if (slot2 == 2)
 	{
 		window.draw(shieldpic2);
 	}
-	if (slot3 == 1)
+	if (slot3 == 2)
 	{
 		window.draw(shieldpic3);
 	}
-	if (slot4 == 1)
+	if (slot4 == 2)
 	{
 		window.draw(shieldpic4);
 	}
@@ -72,6 +77,26 @@ void Shield::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, i
 	shieldpic4.setPosition(playerposition.x - 100, 50);
 }
 
+void Shield::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance)
+{
+	this->distance = distance;
+	if (show == false)
+	{
+		shieldpic.setPosition(0, 0);
+	}
+	if (show == true)
+	{
+		do
+		{
+			shieldpic.setPosition(playerposition.x + 500, 500);
+		} while (true);
+		if (shieldpic.getGlobalBounds().intersects(globleBoundsMeat) || shieldpic.getGlobalBounds().intersects(globleBoundsVeggie) || shieldpic.getGlobalBounds().intersects(globleBoundsOb))
+		{
+			shieldpic.move(50, 0);
+		}
+	}
+}
+
 void Shield::Check(FloatRect playerGlobleBounds, int numItem)
 {
 	if (numItem < 4 && shieldpic.getGlobalBounds().intersects(playerGlobleBounds))
@@ -86,5 +111,16 @@ void Shield::Check(FloatRect playerGlobleBounds, int numItem)
 	else collision = false;
 
 	this->numItem = numItem;
+}
+
+void Shield::Random(int percent)
+{
+	if (show == false)
+	{
+		if (rand() % 100 <= percent)
+		{
+			show = true;
+		}
+	}
 }
 

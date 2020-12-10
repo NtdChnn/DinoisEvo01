@@ -9,6 +9,7 @@
 #include "PlayerHitBox.h"
 #include "Token.h"
 #include "Restart.h"
+#include "Item.h"
 using namespace sf;
 using namespace std;
 class Stage
@@ -30,6 +31,7 @@ private:
 	GameOver gameover;
 	Token token;
 	Restart restart;
+	Item item;
 	int life = 1 ;
 	float distance;
 };

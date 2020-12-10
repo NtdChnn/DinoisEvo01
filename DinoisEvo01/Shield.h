@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <windows.h>
 using namespace sf;
 class Shield
 {
@@ -10,8 +11,11 @@ public:
 	void Draw(RenderWindow& window);
 	void SetpositionUse(Vector2f playerposition, Vector2f playerorigin, bool use);
 	void SetpositionCollect(Vector2f playerposition, int slot1, int slot2, int slot3, int slot4);
+	void SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance);
 	void Check(FloatRect playerGlobleBounds, int numItem);
+	void Random(int percent);
 	int Num() { return numShield; };
+	bool Collision() { return collision; };
 private:
 	Texture shieldTexture;
 	RectangleShape shieldpic;
@@ -28,8 +32,11 @@ private:
 
 	bool use = false;
 	bool collision = false;
+	bool show = false;
 
 	int numShield = 0;
 	int numItem = 0;
+
+	float distance;
 };
 
