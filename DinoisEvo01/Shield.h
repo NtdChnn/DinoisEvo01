@@ -14,6 +14,7 @@ public:
 	void SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance);
 	void Check(FloatRect playerGlobleBounds, int numItem);
 	void Random(int percent);
+	FloatRect GetGlobleBounds() { return shieldpic.getGlobalBounds(); };
 	int Num() { return numShield; };
 	bool Collision() { return collision; };
 private:
@@ -37,6 +38,10 @@ private:
 	int numShield = 0;
 	int numItem = 0;
 
+	int checkshow = 0;
+
 	float distance;
+
+	int checkrand = 0;
 };
 

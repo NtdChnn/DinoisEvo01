@@ -61,7 +61,7 @@ void Shield::SetpositionUse(Vector2f playerposition, Vector2f playerorigin, bool
 {
 	this->use = use;
 	shieldpic0.setOrigin(playerorigin);
-	shieldpic0.setPosition(playerposition.x, playerposition.y - 30);
+	shieldpic0.setPosition(playerposition.x+30, playerposition.y - 30);
 }
 
 void Shield::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, int slot3, int slot4)
@@ -71,10 +71,10 @@ void Shield::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, i
 	this->slot3 = slot3;
 	this->slot4 = slot4;
 
-	shieldpic1.setPosition(playerposition.x - 250, 50);
-	shieldpic2.setPosition(playerposition.x - 200, 50);
-	shieldpic3.setPosition(playerposition.x - 150, 50);
-	shieldpic4.setPosition(playerposition.x - 100, 50);
+	shieldpic1.setPosition(playerposition.x - 383, 55);
+	shieldpic2.setPosition(playerposition.x - 330, 55);
+	shieldpic3.setPosition(playerposition.x - 282, 55);
+	shieldpic4.setPosition(playerposition.x - 230, 55);
 }
 
 void Shield::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance)
@@ -86,15 +86,18 @@ void Shield::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat
 	}
 	if (show == true)
 	{
-		do
+		if (checkshow == 1)
 		{
 			shieldpic.setPosition(playerposition.x + 500, 500);
-		} while (true);
+			checkshow = 0;
+		}
 		if (shieldpic.getGlobalBounds().intersects(globleBoundsMeat) || shieldpic.getGlobalBounds().intersects(globleBoundsVeggie) || shieldpic.getGlobalBounds().intersects(globleBoundsOb))
 		{
 			shieldpic.move(50, 0);
 		}
 	}
+	//CheckERROR//
+	//shieldpic.setPosition(500, 350);
 }
 
 void Shield::Check(FloatRect playerGlobleBounds, int numItem)
@@ -106,6 +109,7 @@ void Shield::Check(FloatRect playerGlobleBounds, int numItem)
 			collision = true;
 			numItem++;
 			numShield++;
+			show = false;
 		}
 	}
 	else collision = false;
@@ -115,12 +119,18 @@ void Shield::Check(FloatRect playerGlobleBounds, int numItem)
 
 void Shield::Random(int percent)
 {
+	//CheckERROR//
+	/*printf("%d", checkrand);
+	if (rand() % 100 <= percent)
+	{ checkrand = 1; } else checkrand = 0;*/
 	if (show == false)
 	{
-		if (rand() % 100 <= percent)
+		if (rand() % 10000000 <= percent)
 		{
 			show = true;
+			checkshow = 1;
 		}
 	}
+	
 }
 

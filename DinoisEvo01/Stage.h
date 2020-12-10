@@ -32,7 +32,9 @@ private:
 	Token token;
 	Restart restart;
 	Item item;
+	int itemuse = 0;
 	int life = 1 ;
 	float distance;
+	bool immortal = false;
 };
 

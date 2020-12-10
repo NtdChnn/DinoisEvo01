@@ -113,7 +113,7 @@ void Token::Restart()
 
 void Token::Magnet(Vector2f playerposition)
 {
-	if (tokenMeat.getPosition().x - 250 < (playerposition.x - 350) && (playerposition.x - 350) < tokenMeat.getPosition().x + 250)
+	if (tokenMeat.getPosition().x - 250 < (playerposition.x - 350) && (playerposition.x - 350) < tokenMeat.getPosition().x + 400)
 	{
 		magnetMeat = true;
 		if ((tokenMeat.getPosition().x - (playerposition.x - 350)) >= (tokenMeat.getPosition().y - (playerposition.y + 105)))

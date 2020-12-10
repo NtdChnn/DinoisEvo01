@@ -11,9 +11,10 @@ public:
 	void Draw(RenderWindow& window);
 	void SetpositionUse(Vector2f playerposition, Vector2f playerorigin, bool use);
 	void SetpositionCollect(Vector2f playerposition, int slot1 , int slot2 , int slot3 , int slot4);
-	void SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance);
+	void SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, FloatRect globleBoundsShield, float distance);
 	void Check(FloatRect playerGlobleBounds,int numItem);
 	void Random(int percent);
+	FloatRect GetGlobleBounds() { return magnetpic.getGlobalBounds(); };
 	int Num() { return numMagnet; };
 	bool Collision() { return collision; };
 private:
@@ -37,6 +38,10 @@ private:
 	int numMagnet = 0;
 	int numItem = 0;
 
+	int checkshow = 0;
+
 	float distance;
+
+	int checkrand = 0;
 };
 

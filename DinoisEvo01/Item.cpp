@@ -16,23 +16,51 @@ void Item::Update(Vector2f playerPosition, Vector2f playerOrigin, FloatRect play
 {
 	this->playerPosition = playerPosition;
 
-	inventory.setPosition(playerPosition.x - 270, 40);
-
+	magnet.Random(1);
 	magnet.SetpositionCollect(playerPosition, slot1, slot2, slot3, slot4);
-	magnet.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobleBounds, distance);
 	magnet.SetpositionUse(playerPosition, playerOrigin, useMagnet);
-	magnet.Random(percent);
+	magnet.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobleBounds, shield.GetGlobleBounds(), distance);
 	magnet.Check(playerGlobleBounds, numOfItem);
 
+	shield.Random(1);
 	shield.SetpositionCollect(playerPosition, slot1, slot2, slot3, slot4);
-	shield.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobleBounds, distance);
 	shield.SetpositionUse(playerPosition, playerOrigin, useShield);
-	shield.Random(percent);
+	shield.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobleBounds, distance);
 	shield.Check(playerGlobleBounds, numOfItem);
+
+	inventory.setPosition(playerPosition.x - 400, 40);
 }
 
-void Item::Check(Vector2f playerPosition)
+//CheckERROR//
+void Item::UpdateInventoryPosition(Vector2f playerPosition)
 {
+	inventory.setPosition(playerPosition.x - 400, 40);
+}
+
+void Item::UpdateItemShowPosition(Vector2f playerPosition, FloatRect tokenMeatGlobleBounds, FloatRect tokenVeggieGlobleBounds, FloatRect ObGlobloBounds, float distance)
+{
+	magnet.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobloBounds, shield.GetGlobleBounds(), distance);
+	shield.SetpositionShow(playerPosition, tokenMeatGlobleBounds, tokenVeggieGlobleBounds, ObGlobloBounds, distance);
+}
+
+void Item::UpdateItemUsePosition(Vector2f playerPosition, Vector2f playerOrigin)
+{
+	shield.SetpositionUse(playerPosition, playerOrigin,useShield);
+	magnet.SetpositionUse(playerPosition, playerOrigin,useMagnet);
+}
+
+void Item::UpdateItemCollectPosition(Vector2f playerPosition)
+{
+	magnet.SetpositionCollect(playerPosition, slot1, slot2, slot3, slot4);
+	shield.SetpositionCollect(playerPosition, slot1, slot2, slot3, slot4);
+}
+
+void Item::Check(Vector2f playerPosition, int useItem)
+{
+	//CheckERROR//
+	//printf("%d %d %d %d \n",slot1, slot2,slot3,slot4);
+	collisionMagnet = magnet.Collision();
+	collisionShield = shield.Collision();
 	if (slot1 == 0 && collisionMagnet == true)
 	{
 		slot1 = 1; numOfItem++;
@@ -40,8 +68,8 @@ void Item::Check(Vector2f playerPosition)
 	else if (slot1 == 0 && collisionShield == true)
 	{
 		slot1 = 2; numOfItem++;
-	} 
-	else if(slot2 == 0 && collisionMagnet == true)
+	}
+	else if (slot2 == 0 && collisionMagnet == true)
 	{
 		slot2 = 1; numOfItem++;
 	}
@@ -75,11 +103,13 @@ void Item::Check(Vector2f playerPosition)
 		{
 			useItem = 1;
 			useMagnet = true; numOfItem--;
+			slot1 = 0;
 		}
 		if (slot1 == 2)
 		{
 			useItem = 2;
 			useShield = true; numOfItem--;
+			slot1 = 0;
 		}
 	}
 
@@ -91,11 +121,13 @@ void Item::Check(Vector2f playerPosition)
 		{
 			useItem = 1;
 			useMagnet = true; numOfItem--;
+			slot2 = 0;
 		}
 		if (slot2 == 2)
 		{
 			useItem = 2;
 			useShield = true; numOfItem--;
+			slot2 = 0;
 		}
 	}
 
@@ -107,11 +139,13 @@ void Item::Check(Vector2f playerPosition)
 		{
 			useItem = 1;
 			useMagnet = true; numOfItem--;
+			slot3 = 0;
 		}
 		if (slot3 == 2)
 		{
 			useItem = 2;
 			useShield = true; numOfItem--;
+			slot3 = 0;
 		}
 	}
 
@@ -123,25 +157,40 @@ void Item::Check(Vector2f playerPosition)
 		{
 			useItem = 1;
 			useMagnet = true; numOfItem--;
+			slot4 = 0;
 		}
 		if (slot4 == 2)
 		{
 			useItem = 2;
 			useShield = true; numOfItem--;
+			slot4 = 0;
 		}
 	}
 
-	if (useItem == 1 || useItem == 2)
+	if (useItem == 1 || useItem == 2 )
 	{
-		checkDistance = playerPosition.x + 500;
-		useItem = 3;
+		//CheckERROR//
+		//printf("%d", itemUsing);
+		if (itemUsing == 0)
+		{
+			checkDistance = playerPosition.x + 500;
+			itemUsing = 1;
+		}
 	}
-	if (useItem == 3 && playerPosition.x == checkDistance)
+	if (itemUsing == 1 && playerPosition.x >= checkDistance)
 	{
 		useItem = 0;
+		itemUsing = 0;
 		useMagnet = false;
 		useShield = false;
 	}
+	if (useItem == 0)
+	{
+		useMagnet = false;
+		useShield = false;
+	}
+
+	this->useItem = useItem;
 }
 
 void Item::Draw(RenderWindow& window)
@@ -149,4 +198,12 @@ void Item::Draw(RenderWindow& window)
 	window.draw(inventory);
 	magnet.Draw(window);
 	shield.Draw(window);
+}
+
+void Item::Restart()
+{
+	slot1 = 0;
+	slot2 = 0;
+	slot3 = 0;
+	slot4 = 0;
 }

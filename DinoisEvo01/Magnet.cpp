@@ -62,7 +62,7 @@ void Magnet::SetpositionUse(Vector2f playerposition,Vector2f playerorigin, bool 
 {
 	this->use = use;
 	magnetpic0.setOrigin(playerorigin);
-	magnetpic0.setPosition(playerposition.x, playerposition.y - 30);
+	magnetpic0.setPosition(playerposition.x+30, playerposition.y - 30);
 }
 
 void Magnet::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, int slot3, int slot4)
@@ -72,13 +72,13 @@ void Magnet::SetpositionCollect(Vector2f playerposition, int slot1, int slot2, i
 	this->slot3 = slot3;
 	this->slot4 = slot4;
 
-	magnetpic1.setPosition(playerposition.x - 250, 50);
-	magnetpic2.setPosition(playerposition.x - 200, 50);
-	magnetpic3.setPosition(playerposition.x - 150, 50);
-	magnetpic4.setPosition(playerposition.x - 100, 50);
+	magnetpic1.setPosition(playerposition.x - 383, 55);
+	magnetpic2.setPosition(playerposition.x - 330, 55);
+	magnetpic3.setPosition(playerposition.x - 282, 55);
+	magnetpic4.setPosition(playerposition.x - 230, 55);
 }
 
-void Magnet::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, float distance)
+void Magnet::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat, FloatRect globleBoundsVeggie, FloatRect globleBoundsOb, FloatRect globleBoundsShield, float distance)
 {
 	this->distance = distance;
 	if (show == false)
@@ -87,15 +87,18 @@ void Magnet::SetpositionShow(Vector2f playerposition, FloatRect globleBoundsMeat
 	}
 	if (show == true)
 	{
-		do
+		if (checkshow == 1)
 		{
 			magnetpic.setPosition(playerposition.x + 500, 500);
-		} while (true);
-		if (magnetpic.getGlobalBounds().intersects(globleBoundsMeat) || magnetpic.getGlobalBounds().intersects(globleBoundsVeggie) || magnetpic.getGlobalBounds().intersects(globleBoundsOb))
+			checkshow = 0;
+		}
+		if (magnetpic.getGlobalBounds().intersects(globleBoundsMeat) || magnetpic.getGlobalBounds().intersects(globleBoundsVeggie) || magnetpic.getGlobalBounds().intersects(globleBoundsOb) || magnetpic.getGlobalBounds().intersects(globleBoundsShield))
 		{
 			magnetpic.move(50, 0);
 		}
 	}
+	//CheckERROR//
+	//magnetpic.setPosition(500, 350);
 }
 
 void Magnet::Check(FloatRect playerGlobleBounds, int numItem)
@@ -117,11 +120,16 @@ void Magnet::Check(FloatRect playerGlobleBounds, int numItem)
 
 void Magnet::Random(int percent)
 { 
+	//CheckERROR//
+	/*printf("%d", checkrand);
+	if (rand() % 100 <= percent)
+	{ checkrand = 1; } else checkrand = 0;*/
 	if (show == false)
 	{
-		if (rand() % 100 <= percent)
+		if (rand() % 10000000 <= percent)
 		{
 			show = true;
+			checkshow = 1;
 		}
 	}
 }

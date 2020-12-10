@@ -10,9 +10,17 @@ public:
 	~Item();
 
 	void Update(Vector2f playerPosition	, Vector2f playerOrigin , FloatRect playerGlobleBounds, FloatRect tokenMeatGlobleBounds, FloatRect tokenVeggieGlobleBounds, FloatRect ObGlobleBounds, float distance , int percent);
-	void Check(Vector2f playerPosition);
+
+	//CheckERROR//
+	void UpdateInventoryPosition(Vector2f playerPosition);
+	void UpdateItemShowPosition(Vector2f playerPosition,FloatRect tokenMeatGlobleBounds ,FloatRect tokenVeggieGlobleBounds, FloatRect ObGlobloBounds, float distance);
+	void UpdateItemUsePosition(Vector2f playerPosition, Vector2f playerOrigin);
+	void UpdateItemCollectPosition(Vector2f playerPosition);
+
+	void Check(Vector2f playerPosition, int useItem);
 	void Draw(RenderWindow& window);
 	int Use() { return useItem; };
+	void Restart();
 private:
 	Texture inventoryTexture;
 	RectangleShape inventory;
@@ -23,12 +31,13 @@ private:
 	Vector2f playerPosition;
 	float checkDistance;
 
-	int slot1;
-	int slot2;
-	int slot3;
-	int slot4;
+	int slot1 = 0;
+	int slot2 = 0;
+	int slot3 = 0;
+	int slot4 = 0;
 
 	int useItem = 0;
+	int itemUsing = 0;
 	bool useMagnet = false;
 	bool useShield = false;
 

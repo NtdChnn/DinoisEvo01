@@ -21,6 +21,25 @@ void Stage::run(float deltaTime)
 	if (pause.Getintpause() == 0 && gameover.statusGame() == false)
 	{
 		player.Update(deltaTime);
+
+		item.Check(player.Getposition(), itemuse);
+		item.Update(player.Getposition(), player.GetOrigin(), player.GetGlobalBounds(), token.GetGlobleBoundsTokenMeat(), token.GetGlobleBoundsTokenVeggie(), Ob01.GetGlobleBounds(), distance, 5);
+		item.UpdateInventoryPosition(player.Getposition());
+		//CheckERROR//
+		//item.UpdateitemUsePosition(player.Getposition(), player.GetOrigin());
+		//item.UpdateItemCollectPosition(player.Getposition());
+		//item.UpdateItemShowPosition(player.Getposition(), token.GetGlobleBoundsTokenMeat(), token.GetGlobleBoundsTokenVeggie(), Ob01.GetGlobleBounds(), distance);
+
+		//UseItem//
+		//CheckERROR//
+		//printf("%d", item.Use());
+		if (item.Use() == 1) { itemuse = 1; }
+		if (item.Use() == 2) { itemuse = 2; }
+		if (item.Use() == 0) { itemuse = 0; }
+		if (itemuse == 1) { token.Magnet(player.Getposition()); }
+		if (itemuse == 2) { immortal = true; }
+		if (playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 2) { itemuse = 0; }
+		if (life > 1 && itemuse == 0) { life = 1; immortal = false; }
 	}
 
 	if (restart.restartStatus() == true)
@@ -29,6 +48,7 @@ void Stage::run(float deltaTime)
 		Ob01.Restart();
 		gameover.Restart();
 		token.Restart();
+		item.Restart();
 	}
 
 		pause.GetPlayerPosition(player.Getposition());
@@ -37,8 +57,11 @@ void Stage::run(float deltaTime)
 
 		playerhitbox.Update(player.Getposition());
 
-		gameover.GetplayerPosition(player.Getposition());
-		gameover.CheckGameOver(Ob01.Getlife());
+		if (immortal == false)
+		{
+			gameover.GetplayerPosition(player.Getposition());
+			gameover.CheckGameOver(Ob01.Getlife());
+		}
 
 		Ob01.Run(player.Getposition());
 		Ob01.UpdateLife(life);
@@ -46,9 +69,6 @@ void Stage::run(float deltaTime)
 
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());
 		token.CheckOb(Ob01.GetGlobleBounds());
-		//token.Magnet(player.Getposition());
-
-		item.Check(player.Getposition());
 
 		restart.Check(gameover.statusGame());
 }
@@ -59,6 +79,7 @@ void Stage::Draw(RenderWindow& window)
 	Ob01.Draw(window);
 	player.Draw(window);
 	token.Draw(window);
+	item.Draw(window);
 	//CheckERROR//
 	//playerhitbox.Draw(window);
 	pause.Draw(window);
