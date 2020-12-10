@@ -1,7 +1,7 @@
 #include "Stage.h"
 
-Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken) :
-	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(44.3, 74.0f),Vector2f(1000,470), frequency, distance), playerhitbox(Vector2f(60.0f,40.0f),player.GetOrigin()), token(numOfToken,distance), restart(), item()
+Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken, Texture* enemyTexture, Vector2u enemyImageCount, float enemySwitchTime, float enemySpeed) :
+	player(playertexture, imageCount, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(44.3, 74.0f),Vector2f(1000,470), frequency, distance), playerhitbox(Vector2f(60.0f,40.0f),player.GetOrigin()), token(numOfToken,distance), restart(), item(),enemy(enemyTexture,enemyImageCount,enemySwitchTime,enemySpeed)
 {
 	this->distance = distance;
 	srand(time(NULL));
@@ -21,6 +21,10 @@ void Stage::run(float deltaTime)
 	if (pause.Getintpause() == 0 && gameover.statusGame() == false)
 	{
 		player.Update(deltaTime);
+
+		enemy.Update(deltaTime);
+		enemy.CheckCollision(playerhitbox.GetGlobalBounds());
+		enemy.UpdatePosition(player.Getposition(), player.GetOrigin());
 
 		item.Check(player.Getposition(), itemuse);
 		item.Update(player.Getposition(), player.GetOrigin(), player.GetGlobalBounds(), token.GetGlobleBoundsTokenMeat(), token.GetGlobleBoundsTokenVeggie(), Ob01.GetGlobleBounds(), distance, 5);
@@ -80,6 +84,7 @@ void Stage::Draw(RenderWindow& window)
 	player.Draw(window);
 	token.Draw(window);
 	item.Draw(window);
+	enemy.Draw(window);
 	//CheckERROR//
 	//playerhitbox.Draw(window);
 	pause.Draw(window);
