@@ -11,8 +11,9 @@ public:
 	void Update(float deltatime);
 	void Draw(RenderWindow& window);
 	void CheckCollision(FloatRect globleBoundsPlayer);
-	bool Collostion() { return collision; };
+	bool Collosion() { return collision; };
 	void UpdatePosition(Vector2f playerPosition, Vector2f playerOrigin);
+	void Restart();
 
 private:
 	RectangleShape enemy;
@@ -20,13 +21,11 @@ private:
 	
 	unsigned int row;
 	float speed;
-	int frequancy;
 
 	int showStatus = 0;
 	bool show = false;
 	bool collision = false;
 
-	float deltaTime = 0.0f;
 	Clock clock;
 };
 

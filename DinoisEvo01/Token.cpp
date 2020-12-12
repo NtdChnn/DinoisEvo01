@@ -120,22 +120,22 @@ void Token::Magnet(Vector2f playerposition)
 		{
 			if (tokenMeat.getPosition().x - (playerposition.x - 350) > 0)
 			{
-				tokenMeat.move(-0.2, 0);
+				tokenMeat.move(-10, 0);
 			}
 			if (tokenMeat.getPosition().x - (playerposition.x - 350) < 0)
 			{
-				tokenMeat.move(0.2, 0);
+				tokenMeat.move(10, 0);
 			}
 		}
 		if ((tokenMeat.getPosition().x - (playerposition.x - 350)) < (tokenMeat.getPosition().y - (playerposition.y + 105)))
 		{
 			if (tokenMeat.getPosition().y - (playerposition.y + 105) > 0)
 			{
-				tokenMeat.move(0, -0.2);
+				tokenMeat.move(0, -10);
 			}
 			if (tokenMeat.getPosition().y - (playerposition.y + 105) < 0)
 			{
-				tokenMeat.move(0, 0.2);
+				tokenMeat.move(0, 10);
 			}
 		}
 	}
@@ -148,22 +148,22 @@ void Token::Magnet(Vector2f playerposition)
 		{
 			if (tokenVeggie.getPosition().x - (playerposition.x - 350) > 0)
 			{
-				tokenVeggie.move(-0.2, 0);
+				tokenVeggie.move(-10, 0);
 			}
 			if (tokenVeggie.getPosition().x - (playerposition.x - 350) < 0)
 			{
-				tokenVeggie.move(0.2, 0);
+				tokenVeggie.move(10, 0);
 			}
 		}
 		if ((tokenVeggie.getPosition().x - (playerposition.x - 350)) < (tokenVeggie.getPosition().y - (playerposition.y + 105)))
 		{
 			if (tokenVeggie.getPosition().y - (playerposition.y + 105) > 0)
 			{
-				tokenVeggie.move(0, -0.2);
+				tokenVeggie.move(0, -10);
 			}
 			if (tokenVeggie.getPosition().y - (playerposition.y + 105) < 0)
 			{
-				tokenVeggie.move(0, 0.2);
+				tokenVeggie.move(0, 10);
 			}
 		}
 	}

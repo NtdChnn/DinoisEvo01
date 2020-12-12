@@ -9,13 +9,15 @@ public:
 	~Obstruction();
 
 	void Draw(RenderWindow& window);
-	bool Checkcollision(FloatRect player);
+	void Checkcollision(FloatRect player);
 	void Run(Vector2f playerPosition);
 	void UpdateLife(int life);
 	int Getlife() { return life; };
 	Vector2f GetPosition() { return obstrutction.getPosition(); };
 	FloatRect GetGlobleBounds() { return obstrutction.getGlobalBounds(); };
 	void Restart();
+	bool Collision() { return collision; };
+
 private:
 	Vector2f size;
 	Vector2f position;

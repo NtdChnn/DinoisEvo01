@@ -37,10 +37,11 @@ int main()
 	//Enemy
 	Texture enemyTexture;
 	enemyTexture.loadFromFile("enemyremovebg.png");
-	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 8000, &BG01Texture,&Cactus01Texture,5,7,&enemyTexture, Vector2u(7,1), 0.1f,150.0f);
+	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 8000, &BG01Texture,&Cactus01Texture,5,7,&enemyTexture, Vector2u(7,1), 0.1f,100.0f);
 
 	float deltaTime = 0.0f;
 	Clock clock;
+	window.setFramerateLimit(120);
 
 	while (window.isOpen())
 	{

@@ -25,7 +25,7 @@ void Obstruction::Draw(RenderWindow& window)
 	
 }
 
-bool Obstruction::Checkcollision(FloatRect player)
+void Obstruction::Checkcollision(FloatRect player)
 {
 	if (obstrutction.getGlobalBounds().intersects(player))
 	{
@@ -36,7 +36,11 @@ bool Obstruction::Checkcollision(FloatRect player)
 	}
 	else collision = false;
 
-	return collision;
+	//Check ERROR//
+	if (collision == true)
+	{
+		//printf("Now Collision!");
+	}
 }
 
 void Obstruction::Run(Vector2f playerPosition)
@@ -60,4 +64,5 @@ void Obstruction::Restart()
 	obstrutction.setSize(size);
 	obstrutction.setPosition(position);
 	life = 1;
+	collision = false;
 }

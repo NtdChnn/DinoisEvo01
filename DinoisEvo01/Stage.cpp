@@ -25,6 +25,12 @@ void Stage::run(float deltaTime)
 		enemy.Update(deltaTime);
 		enemy.CheckCollision(playerhitbox.GetGlobalBounds());
 		enemy.UpdatePosition(player.Getposition(), player.GetOrigin());
+		if (enemy.Collosion() == true) { life--; }
+
+		Ob01.Run(player.Getposition());
+		Ob01.UpdateLife(life);
+		Ob01.Checkcollision(playerhitbox.GetGlobalBounds());
+		if (Ob01.Collision() == true) { life--; }
 
 		item.Check(player.Getposition(), itemuse);
 		item.Update(player.Getposition(), player.GetOrigin(), player.GetGlobalBounds(), token.GetGlobleBoundsTokenMeat(), token.GetGlobleBoundsTokenVeggie(), Ob01.GetGlobleBounds(), distance, 5);
@@ -36,18 +42,24 @@ void Stage::run(float deltaTime)
 
 		//UseItem//
 		//CheckERROR//
-		//printf("%d", item.Use());
+		//printf("%d\n", item.Use());
 		if (item.Use() == 1) { itemuse = 1; }
 		if (item.Use() == 2) { itemuse = 2; }
 		if (item.Use() == 0) { itemuse = 0; }
-		//printf("%d", itemuse);
+		//printf("%d\n", itemuse);
 		if (itemuse == 1) { token.Magnet(player.Getposition()); }
 		if (itemuse == 2) { life++; immortal = true; }
-		if (playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 2 && immortal == true) 
-			{ itemuse = 3; }
-		if (!playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 3 && immortal == true)
-			{ itemuse = 0; }
-		if (life > 1 && itemuse == 0) { life = 1;  immortal = false; }
+		/*if (playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 2 && immortal == true)
+		{ itemuse = 3; }
+		//if (!playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 3 && immortal == true)
+		//{ itemuse = 0; }
+		if (enemy.Collostion() == true && itemuse == 2 && immortal == true)
+		{ itemuse = 3; }
+		//if (enemy.Collostion() == false && itemuse == 3 && immortal == true)
+		//{ itemuse = 0; } */
+		//printf("%d\n", itemuse);
+		if (life >= 1 && itemuse == 0) { life = 1;  immortal = false; }
+
 	}
 
 	if (restart.restartStatus() == true)
@@ -57,6 +69,9 @@ void Stage::run(float deltaTime)
 		gameover.Restart();
 		token.Restart();
 		item.Restart();
+		enemy.Restart();
+		itemuse = 0;
+		life = 1;
 	}
 
 		pause.GetPlayerPosition(player.Getposition());
@@ -70,10 +85,6 @@ void Stage::run(float deltaTime)
 			gameover.GetplayerPosition(player.Getposition());
 			gameover.CheckGameOver(Ob01.Getlife());
 		}
-
-		Ob01.Run(player.Getposition());
-		Ob01.UpdateLife(life);
-		Ob01.Checkcollision(playerhitbox.GetGlobalBounds());
 
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());
 		token.CheckOb(Ob01.GetGlobleBounds());

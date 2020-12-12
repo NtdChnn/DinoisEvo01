@@ -42,12 +42,12 @@ Mainmenu::~Mainmenu()
 
 void Mainmenu::Run()
 {
-	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF))
+	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF) || Keyboard::isKeyPressed(Keyboard::Key::N))
 	{
-		if (Mouse::isButtonPressed(Mouse::Left))
+		if (Mouse::isButtonPressed(Mouse::Left) || Keyboard::isKeyPressed(Keyboard::Key::N))
 		{ 
 			//Checkerror//
-			printf("%d",forChangeWindow);
+			//printf("%d",forChangeWindow);
 			forChangeWindow = 1;
 		}
 	}
