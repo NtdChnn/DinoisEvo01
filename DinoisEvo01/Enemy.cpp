@@ -18,10 +18,8 @@ Enemy::~Enemy()
 
 void Enemy::Update(float deltatime)
 {
-	if (show == true)
+	if (showStatus == 2)
 	{
-		animation.Update(row, deltatime, 0);
-		enemy.setTextureRect(animation.uvRect);
 		enemy.move(speed, 0);
 	}
 	animation.Update(row, deltatime, 0);
@@ -52,7 +50,7 @@ void Enemy::UpdatePosition(Vector2f playerPosition, Vector2f playerOrigin)
 	enemy.setOrigin(playerOrigin);
 	int playerPositionint;
 	playerPositionint = playerPosition.x;
-	if (playerPositionint % 1500 == 0)
+	if (playerPositionint % 1500 <= 100)
 	{		
 		show = true;
 		showStatus = 1;
@@ -60,6 +58,7 @@ void Enemy::UpdatePosition(Vector2f playerPosition, Vector2f playerOrigin)
 	if (showStatus == 0)
 	{
 		enemy.setPosition(0, 0);
+		//enemy.setPosition(500, 350);
 	}
 	else if (showStatus == 1)
 	{
@@ -71,5 +70,5 @@ void Enemy::UpdatePosition(Vector2f playerPosition, Vector2f playerOrigin)
 		show = false;
 		showStatus = 0;
 	}
-	enemy.setPosition(500, 350);
+	//enemy.setPosition(500, 350);
 }

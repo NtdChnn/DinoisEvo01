@@ -61,6 +61,7 @@ void Item::Check(Vector2f playerPosition, int useItem)
 	//printf("%d %d %d %d \n",slot1, slot2,slot3,slot4);
 	collisionMagnet = magnet.Collision();
 	collisionShield = shield.Collision();
+
 	if (slot1 == 0 && collisionMagnet == true)
 	{
 		slot1 = 1; numOfItem++;
@@ -93,6 +94,40 @@ void Item::Check(Vector2f playerPosition, int useItem)
 	{
 		slot4 = 2; numOfItem++;
 	}
+
+	//Cheat ! !//
+		if (slot1 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::Z))
+		{
+			slot1 = 1; numOfItem++;
+		}
+		else if (slot1 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::X))
+		{
+			slot1 = 2; numOfItem++;
+		}
+		else if (slot2 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::Z))
+		{
+			slot2 = 1; numOfItem++;
+		}
+		else if (slot2 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::X))
+		{
+			slot2 = 2; numOfItem++;
+		}
+		else if (slot3 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::Z))
+		{
+			slot3 = 1; numOfItem++;
+		}
+		else if (slot3 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::X))
+		{
+			slot3 = 2; numOfItem++;
+		}
+		else if (slot4 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::Z))
+		{
+			slot4 = 1; numOfItem++;
+		}
+		else if (slot4 == 0 && Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::X))
+		{
+			slot4 = 2; numOfItem++;
+		}
 
 
 	if (Keyboard::isKeyPressed(Keyboard::Key::Num1) && useMagnet == false && useShield == false && slot1 != 0)

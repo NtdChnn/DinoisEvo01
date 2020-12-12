@@ -40,10 +40,14 @@ void Stage::run(float deltaTime)
 		if (item.Use() == 1) { itemuse = 1; }
 		if (item.Use() == 2) { itemuse = 2; }
 		if (item.Use() == 0) { itemuse = 0; }
+		//printf("%d", itemuse);
 		if (itemuse == 1) { token.Magnet(player.Getposition()); }
-		if (itemuse == 2) { immortal = true; }
-		if (playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 2) { itemuse = 0; }
-		if (life > 1 && itemuse == 0) { life = 1; immortal = false; }
+		if (itemuse == 2) { life++; immortal = true; }
+		if (playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 2 && immortal == true) 
+			{ itemuse = 3; }
+		if (!playerhitbox.GetGlobalBounds().intersects(Ob01.GetGlobleBounds()) && itemuse == 3 && immortal == true)
+			{ itemuse = 0; }
+		if (life > 1 && itemuse == 0) { life = 1;  immortal = false; }
 	}
 
 	if (restart.restartStatus() == true)

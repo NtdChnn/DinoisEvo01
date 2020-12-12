@@ -33,6 +33,11 @@ void Player::Update(float deltatime)
 		run = true;
 		jump = 1;
 	}
+	if (Keyboard::isKeyPressed(Keyboard::Key::Space) && jump == 0)
+	{
+		run = true;
+		jump = 1;
+	}
 	if (run == true )
 	{
 		movement.x += speed * deltatime;
