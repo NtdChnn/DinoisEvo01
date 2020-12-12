@@ -59,7 +59,7 @@ int main()
 		//printf("%d", mainmenu.GetChangeWindow());
 		switch (mainmenu.GetChangeWindow())
 		{
-		case 0:
+		case 99: /*Main Menu*/
 		{
 			mainmenu.Run();
 			window.clear();
@@ -67,7 +67,35 @@ int main()
 			window.display();
 			break;
 		}
-		case 1:
+		case 88: /*Main Menu*/
+		{
+			break;
+		}
+		case 10: /*Enter Name*/
+		{
+			break;
+		}
+		case 20: /*Choose Stage*/
+		{
+			break;
+		}
+		case 30: /*LeaderBoard*/
+		{
+			break;
+		}
+		case 40: /*HowToPlay*/
+		{
+			break;
+		}
+		case 50: /*Credit*/
+		{
+			break;
+		}
+		case 0: /*STAGE00*/
+		{
+			break;
+		}
+		case 1: /*STAGE01*/
 		{
 			stage01.run(deltaTime);
 			view.setCenter(stage01.Getplayerposition().x, 350.0f);
@@ -75,6 +103,34 @@ int main()
 			stage01.Draw(window);
 			window.setView(view);
 			window.display();
+			break;
+		}
+		case 2: /*STAGE02*/
+		{
+			break;
+		}
+		case 3: /*STAGE03*/
+		{
+			break;
+		}
+		case 4: /*STAGE04*/
+		{
+			break;
+		}
+		case 5: /*STAGE05*/
+		{
+			break;
+		}
+		case 6: /*STAGE06*/
+		{
+			break;
+		}
+		case 7: /*STAGE07*/
+		{
+			break;
+		}
+		case 8: /*STAGE08*/
+		{
 			break;
 		}
 		}

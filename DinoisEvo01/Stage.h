@@ -34,6 +34,7 @@ private:
 	Restart restart;
 	Item item;
 	Enemy enemy;
+	int forChangeWindow;
 	int itemuse = 0;
 	int life = 1 ;
 	float distance;

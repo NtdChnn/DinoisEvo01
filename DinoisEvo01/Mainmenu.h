@@ -12,13 +12,14 @@ public:
 	void Run();
 	void Draw(RenderWindow& window);
 	void Updatemousepos(RenderWindow& window);
+	void UpdateWindowChange(int forChangeWindow) { this->forChangeWindow = forChangeWindow; };
 	int GetChangeWindow() { return forChangeWindow; };
 
 private:
 	RectangleShape mainmenuBG;
 	Texture BGtexture;
 
-	int forChangeWindow = 0;
+	int forChangeWindow = 99;
 
 	Font gameFont;
 
@@ -33,6 +34,12 @@ private:
 	RectangleShape menuBGtextS;
 	Texture STexture;
 	Text menuTextStage;
+
+	RectangleShape menuBGtextHTP;
+	Text menuTextHowToPlay;
+
+	RectangleShape menuBGtextC;
+	Text menuTextCredit;
 
 	RectangleShape menuBGtextE;
 	Texture ETexture;

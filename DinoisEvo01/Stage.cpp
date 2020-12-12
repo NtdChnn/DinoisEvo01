@@ -35,6 +35,7 @@ void Stage::run(float deltaTime)
 		item.Check(player.Getposition(), itemuse);
 		item.Update(player.Getposition(), player.GetOrigin(), player.GetGlobalBounds(), token.GetGlobleBoundsTokenMeat(), token.GetGlobleBoundsTokenVeggie(), Ob01.GetGlobleBounds(), distance, 5);
 		item.UpdateInventoryPosition(player.Getposition());
+		/*
 		//CheckERROR//
 		//item.UpdateitemUsePosition(player.Getposition(), player.GetOrigin());
 		//item.UpdateItemCollectPosition(player.Getposition());
@@ -42,7 +43,7 @@ void Stage::run(float deltaTime)
 
 		//UseItem//
 		//CheckERROR//
-		//printf("%d\n", item.Use());
+		//printf("%d\n", item.Use()); */
 		if (item.Use() == 1) { itemuse = 1; }
 		if (item.Use() == 2) { itemuse = 2; }
 		if (item.Use() == 0) { itemuse = 0; }
@@ -62,6 +63,7 @@ void Stage::run(float deltaTime)
 
 	}
 
+	restart.Check(gameover.statusGame());
 	if (restart.restartStatus() == true)
 	{
 		player.Restart();
@@ -88,8 +90,6 @@ void Stage::run(float deltaTime)
 
 		token.Update(playerhitbox.GetGlobalBounds(),player.Getposition());
 		token.CheckOb(Ob01.GetGlobleBounds());
-
-		restart.Check(gameover.statusGame());
 }
 
 void Stage::Draw(RenderWindow& window)

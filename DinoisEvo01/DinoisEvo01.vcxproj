@@ -160,6 +160,7 @@
     <ClCompile Include="ScoreToken.cpp" />
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Stage.cpp" />
+    <ClCompile Include="StageComplete.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,7 @@
     <ClInclude Include="ScoreToken.h" />
     <ClInclude Include="Shield.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="StageComplete.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
