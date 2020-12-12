@@ -67,7 +67,7 @@ int main()
 			window.display();
 			break;
 		}
-		case 88: /*Main Menu*/
+		case 88: /*Story*/
 		{
 			break;
 		}
