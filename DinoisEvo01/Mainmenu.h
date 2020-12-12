@@ -26,13 +26,13 @@ private:
 	Texture NGTexture;
 	Text menuTextNewGame;
 
-	RectangleShape menuBGtextLS;
-	Texture LSTexture;
-	Text menuTextLoadSave;
+	RectangleShape menuBGtextLDB;
+	Texture LDBTexture;
+	Text menuTextLeaderBoard;
 
-	RectangleShape menuBGtextC;
-	Texture CTexture;
-	Text menuTextCharacter;
+	RectangleShape menuBGtextS;
+	Texture STexture;
+	Text menuTextStage;
 
 	RectangleShape menuBGtextE;
 	Texture ETexture;

@@ -5,13 +5,15 @@ ScoreToken::ScoreToken()
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 	tokenMeatX.setFont(gameFont);
 	tokenMeatX.setOutlineColor(Color::White);
+	tokenMeatX.setOutlineThickness(2);
 	tokenMeatX.setFillColor(Color::Black);
 	tokenMeatX.setStyle(Text::Regular);
 	tokenMeatX.setString("X");
 	tokenMeatX.setCharacterSize(20);
 
 	tokenMeatScore.setFont(gameFont);
-	tokenMeatScore.setFillColor(Color::White);
+	tokenMeatScore.setOutlineColor(Color::White);
+	tokenMeatScore.setOutlineThickness(2);
 	tokenMeatScore.setFillColor(Color::Black);
 	tokenMeatScore.setStyle(Text::Regular);
 	tokenMeatScore.setCharacterSize(20);
@@ -22,13 +24,15 @@ ScoreToken::ScoreToken()
 
 	tokenVeggieX.setFont(gameFont);
 	tokenVeggieX.setOutlineColor(Color::White);
+	tokenVeggieX.setOutlineThickness(2);
 	tokenVeggieX.setFillColor(Color::Black);
 	tokenVeggieX.setStyle(Text::Regular);
 	tokenVeggieX.setString("X");
 	tokenVeggieX.setCharacterSize(20);
 
 	tokenVeggieScore.setFont(gameFont);
-	tokenVeggieScore.setFillColor(Color::White);
+	tokenVeggieScore.setOutlineColor(Color::White);
+	tokenVeggieScore.setOutlineThickness(2);
 	tokenVeggieScore.setFillColor(Color::Black);
 	tokenVeggieScore.setStyle(Text::Regular);
 	tokenVeggieScore.setCharacterSize(20);

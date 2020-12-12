@@ -28,6 +28,11 @@ int main()
 	playerTexture01.loadFromFile("player01.png");
 	Texture BG01Texture;
 	BG01Texture.loadFromFile("BGdesert.png");
+
+	//Stage02
+	Texture BG02Texture;
+	BG02Texture.loadFromFile("BGForestNight.png");
+
 	//&Rock02texture, Vector2f(177.0f,56.0f), Vector2f(1851.0f,501.0f)
 	Texture Rocktexture;
 	Rocktexture.loadFromFile("rockrealrockremoveBG.png");
@@ -38,6 +43,8 @@ int main()
 	Texture enemyTexture;
 	enemyTexture.loadFromFile("enemyremovebg.png");
 	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 8000, &BG01Texture,&Cactus01Texture,5,7,&enemyTexture, Vector2u(7,1), 0.1f,100.0f);
+
+	
 
 	float deltaTime = 0.0f;
 	Clock clock;
