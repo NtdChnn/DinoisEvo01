@@ -23,26 +23,37 @@ int main()
 	//Mainmenu
 	Mainmenu mainmenu;
 
-	//Stage01
+	//Stage00
 	Texture playerTexture01;
 	playerTexture01.loadFromFile("player01.png");
-	Texture BG01Texture;
-	BG01Texture.loadFromFile("BGdesert.png");
+	Texture BG00Texture;
+	BG00Texture.loadFromFile("BGStage00_USE.png");
+	Texture enemyTexture00;
+	enemyTexture00.loadFromFile("enemyremovebg.png");
+	Texture obTexture00;
+	obTexture00.loadFromFile("ObStage00.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
+	Stage stage01(&playerTexture01, Vector2u(8, 2), 0.05f, 200.0f, 320.f, 8000, &BG00Texture, &obTexture00, 5, 7, &enemyTexture00, Vector2u(7, 1), 0.1f, 100.0f);
+
+	//Stage01
 
 	//Stage02
 	Texture BG02Texture;
-	BG02Texture.loadFromFile("BGForestNight.png");
+	BG02Texture.loadFromFile("BGStage02_USE.png");
 
-	//&Rock02texture, Vector2f(177.0f,56.0f), Vector2f(1851.0f,501.0f)
-	Texture Rocktexture;
-	Rocktexture.loadFromFile("rockrealrockremoveBG.png");
-	//&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
-	Texture Cactus01Texture;
-	Cactus01Texture.loadFromFile("cactus01-removebg.png");
-	//Enemy
-	Texture enemyTexture;
-	enemyTexture.loadFromFile("enemyremovebg.png");
-	Stage stage01(&playerTexture01 , Vector2u(8, 2), 0.05f, 200.0f,320.f, 8000, &BG01Texture,&Cactus01Texture,5,7,&enemyTexture, Vector2u(7,1), 0.1f,100.0f);
+	//Stage03
+
+	//Stage04
+
+	//Stage05
+
+	//Stage06
+
+	//Stage07
+
+	//Stage08
+
+	
+	
 
 	
 

@@ -5,7 +5,7 @@ Stage::Stage(Texture* playertexture, Vector2u imageCount, float switchTime, floa
 {
 	this->distance = distance;
 	srand(time(NULL));
-	BG.setSize(Vector2f(13910,700));
+	BG.setSize(Vector2f(15000,700));
 	BG.setPosition(Vector2f(0.0f, 0.0f));
 	BG.setTexture(BGtexture);
 }
