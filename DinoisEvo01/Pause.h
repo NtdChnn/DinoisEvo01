@@ -14,6 +14,8 @@ public:
 	void Draw(RenderWindow& window);
 	void GetPlayerPosition(Vector2f(position));
 	void Setrun(bool run);
+	int GetForChangewindow();
+	int GetCheckReturnToMenu() { return checkReturnToMenu; };
 private:
 	int intPause;
 	int checkpress01;
@@ -23,5 +25,13 @@ private:
 	Text pauseText02;
 	Font gameFont;
 	RectangleShape pauseBG;
+
+	Text returnToMenuText;
+	RectangleShape returnToMenuBG;
+	int forChangeWindow;
+	int checkReturnToMenu;
+
+	Vector2i mousePos;
+	Vector2f mousePosF;
 };
 

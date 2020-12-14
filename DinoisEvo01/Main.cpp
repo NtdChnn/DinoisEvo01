@@ -167,7 +167,7 @@ int main()
 			stage00.run(deltaTime);
 			view.setCenter(stage01.Getplayerposition().x, 350.0f);
 			window.clear();
-			stage01.Draw(window);
+			stage00.Draw(window);
 			window.setView(view);
 			window.display();
 			break;
@@ -185,22 +185,52 @@ int main()
 		}
 		case 2: /*STAGE02*/
 		{
+			stage02.run(deltaTime);
+			view.setCenter(stage01.Getplayerposition().x, 350.0f);
+			window.clear();
+			stage02.Draw(window);
+			window.setView(view);
+			window.display();
 			break;
 		}
 		case 3: /*STAGE03*/
 		{
+			stage03.run(deltaTime);
+			view.setCenter(stage01.Getplayerposition().x, 350.0f);
+			window.clear();
+			stage03.Draw(window);
+			window.setView(view);
+			window.display();
 			break;
 		}
 		case 4: /*STAGE04*/
 		{
+			stage04.run(deltaTime);
+			view.setCenter(stage01.Getplayerposition().x, 350.0f);
+			window.clear();
+			stage04.Draw(window);
+			window.setView(view);
+			window.display();
 			break;
 		}
 		case 5: /*STAGE05*/
 		{
+			stage05.run(deltaTime);
+			view.setCenter(stage01.Getplayerposition().x, 350.0f);
+			window.clear();
+			stage05.Draw(window);
+			window.setView(view);
+			window.display();
 			break;
 		}
 		case 6: /*STAGE06*/
 		{
+			stage06.run(deltaTime);
+			view.setCenter(stage01.Getplayerposition().x, 350.0f);
+			window.clear();
+			stage06.Draw(window);
+			window.setView(view);
+			window.display();
 			break;
 		}
 		}

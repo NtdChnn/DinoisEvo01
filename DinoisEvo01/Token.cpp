@@ -1,7 +1,7 @@
 #include "Token.h"
 
 Token::Token(int numOfToken, float distance, Texture* tokenTexture01, Texture* tokenTexture02,Vector2f sizeTexture01,Vector2f sizeTexture02) :
-	scoretoken()
+	scoretoken(tokenTexture01,tokenTexture02)
 {
 	this->numOfToken = numOfToken;
 	this->distance = distance;

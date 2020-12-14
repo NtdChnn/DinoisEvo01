@@ -1,45 +1,43 @@
 #include "ScoreToken.h"
 
-ScoreToken::ScoreToken()
+ScoreToken::ScoreToken(Texture* token01Texture,Texture* token02Texture)
 {
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
-	tokenMeatX.setFont(gameFont);
-	tokenMeatX.setOutlineColor(Color::White);
-	tokenMeatX.setOutlineThickness(2);
-	tokenMeatX.setFillColor(Color::Black);
-	tokenMeatX.setStyle(Text::Regular);
-	tokenMeatX.setString("X");
-	tokenMeatX.setCharacterSize(20);
+	token01X.setFont(gameFont);
+	token01X.setOutlineColor(Color::White);
+	token01X.setOutlineThickness(2);
+	token01X.setFillColor(Color::Black);
+	token01X.setStyle(Text::Regular);
+	token01X.setString("X");
+	token01X.setCharacterSize(20);
 
-	tokenMeatScore.setFont(gameFont);
-	tokenMeatScore.setOutlineColor(Color::White);
-	tokenMeatScore.setOutlineThickness(2);
-	tokenMeatScore.setFillColor(Color::Black);
-	tokenMeatScore.setStyle(Text::Regular);
-	tokenMeatScore.setCharacterSize(20);
+	token01Score.setFont(gameFont);
+	token01Score.setOutlineColor(Color::White);
+	token01Score.setOutlineThickness(2);
+	token01Score.setFillColor(Color::Black);
+	token01Score.setStyle(Text::Regular);
+	token01Score.setCharacterSize(20);
 
-	meatTexture.loadFromFile("meat.png");
-	tokenMeat.setTexture(&meatTexture);
-	tokenMeat.setSize(Vector2f(40.0f, 40.0f));
+	token01.setTexture(token01Texture);
+	token01.setSize(Vector2f(40.0f, 40.0f));
 
-	tokenVeggieX.setFont(gameFont);
-	tokenVeggieX.setOutlineColor(Color::White);
-	tokenVeggieX.setOutlineThickness(2);
-	tokenVeggieX.setFillColor(Color::Black);
-	tokenVeggieX.setStyle(Text::Regular);
-	tokenVeggieX.setString("X");
-	tokenVeggieX.setCharacterSize(20);
+	token02X.setFont(gameFont);
+	token02X.setOutlineColor(Color::White);
+	token02X.setOutlineThickness(2);
+	token02X.setFillColor(Color::Black);
+	token02X.setStyle(Text::Regular);
+	token02X.setString("X");
+	token02X.setCharacterSize(20);
 
-	tokenVeggieScore.setFont(gameFont);
-	tokenVeggieScore.setOutlineColor(Color::White);
-	tokenVeggieScore.setOutlineThickness(2);
-	tokenVeggieScore.setFillColor(Color::Black);
-	tokenVeggieScore.setStyle(Text::Regular);
-	tokenVeggieScore.setCharacterSize(20);
+	token02Score.setFont(gameFont);
+	token02Score.setOutlineColor(Color::White);
+	token02Score.setOutlineThickness(2);
+	token02Score.setFillColor(Color::Black);
+	token02Score.setStyle(Text::Regular);
+	token02Score.setCharacterSize(20);
 
-	veggieTexture.loadFromFile("vegetable.png");
-	tokenVeggie.setTexture(&veggieTexture);
-	tokenVeggie.setSize(Vector2f(40.0f, 40.0f));
+	token02.setTexture(token02Texture);
+	token02.setSize(Vector2f(40.0f, 40.0f));
 }
 
 ScoreToken::~ScoreToken()
@@ -48,24 +46,24 @@ ScoreToken::~ScoreToken()
 
 void ScoreToken::Draw(RenderWindow& window)
 {
-	window.draw(tokenMeat);
-	window.draw(tokenMeatScore);
-	window.draw(tokenMeatX);
+	window.draw(token01);
+	window.draw(token01Score);
+	window.draw(token01X);
 
-	window.draw(tokenVeggie);
-	window.draw(tokenVeggieScore);
-	window.draw(tokenVeggieX);
+	window.draw(token02);
+	window.draw(token02Score);
+	window.draw(token02X);
 }
 
 void ScoreToken::UpdatPosition(Vector2f playerPosition)
 {
-	tokenMeat.setPosition(playerPosition.x+300,45.0f);
-	tokenMeatScore.setPosition(playerPosition.x+400, 50.0f);
-	tokenMeatX.setPosition(playerPosition.x+360, 50.0f);
+	token01.setPosition(playerPosition.x+300,45.0f);
+	token01Score.setPosition(playerPosition.x+400, 50.0f);
+	token01X.setPosition(playerPosition.x+360, 50.0f);
 
-	tokenVeggie.setPosition(playerPosition.x+300, 95.0f);
-	tokenVeggieScore.setPosition(playerPosition.x+400, 100.0f);
-	tokenVeggieX.setPosition(playerPosition.x+360, 100.0f);
+	token02.setPosition(playerPosition.x+300, 95.0f);
+	token02Score.setPosition(playerPosition.x+400, 100.0f);
+	token02X.setPosition(playerPosition.x+360, 100.0f);
 }
 
 void ScoreToken::UpdateScore(int tokenMeat, int tokenVeggie)
@@ -74,11 +72,11 @@ void ScoreToken::UpdateScore(int tokenMeat, int tokenVeggie)
 	//printf("%d", tokenMeat);
 	stringstream meatScoreShow;
 	meatScoreShow << tokenMeat;
-	tokenMeatScore.setString(meatScoreShow.str().c_str());
+	token01Score.setString(meatScoreShow.str().c_str());
 
 	//Check ERROR//
 	//printf("%d", tokenVeggie);
 	stringstream veggieScoreShow;
 	veggieScoreShow << tokenVeggie;
-	tokenVeggieScore.setString(veggieScoreShow.str().c_str());
+	token02Score.setString(veggieScoreShow.str().c_str());
 }

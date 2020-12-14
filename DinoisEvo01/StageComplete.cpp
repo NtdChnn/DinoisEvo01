@@ -2,6 +2,7 @@
 
 StageComplete::StageComplete()
 {
+	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 }
 
 StageComplete::~StageComplete()
@@ -10,4 +11,5 @@ StageComplete::~StageComplete()
 
 void StageComplete::Update(float distance, Vector2f playerPosition)
 {
+
 }

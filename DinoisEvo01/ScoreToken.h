@@ -6,7 +6,7 @@ using namespace std;
 class ScoreToken
 {
 public:
-	ScoreToken();
+	ScoreToken(Texture* token01Texture, Texture* token02Texture);
 	~ScoreToken();
 
 	void Draw(RenderWindow& window);
@@ -16,16 +16,16 @@ private:
 	Font gameFont;
 
 	Texture meatTexture;
-	RectangleShape tokenMeat;
-	Text tokenMeatScore;
+	RectangleShape token01;
+	Text token01Score;
 	int scoreMeatToken;
-	Text tokenMeatX;
+	Text token01X;
 
 	Texture veggieTexture;
-	RectangleShape tokenVeggie;
-	Text tokenVeggieScore;
+	RectangleShape token02;
+	Text token02Score;
 	int scoreVeggieToken;
-	Text tokenVeggieX;
+	Text token02X;
 
 };
 

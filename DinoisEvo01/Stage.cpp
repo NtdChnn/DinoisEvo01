@@ -79,6 +79,10 @@ void Stage::run(float deltaTime)
 		pause.GetPlayerPosition(player.Getposition());
 		pause.Setrun(player.Getrun());
 		pause.checkPause();
+		if (pause.GetCheckReturnToMenu() == 1)
+		{
+			forChangeWindow = pause.GetForChangewindow();
+		}
 
 		playerhitbox.Update(player.Getposition());
 
