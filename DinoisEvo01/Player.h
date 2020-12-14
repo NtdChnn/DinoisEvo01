@@ -17,6 +17,7 @@ public:
 	Vector2f GetOrigin() { return body.getOrigin(); };
 	void Restart();
 	void Life(int life);
+	void UpdateRun(bool run) { this->run = run; };
 
 private:
 	RectangleShape body;

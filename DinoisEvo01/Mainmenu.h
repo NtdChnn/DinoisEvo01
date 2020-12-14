@@ -14,6 +14,7 @@ public:
 	void Updatemousepos(RenderWindow& window);
 	void UpdateWindowChange(int forChangeWindow) { this->forChangeWindow = forChangeWindow; };
 	int GetChangeWindow() { return forChangeWindow; };
+	int GetCheckForChangeWindow() { return CheckForChangeWindow; };
 
 private:
 	RectangleShape mainmenuBG;
@@ -48,5 +49,6 @@ private:
 
 	Vector2i mousePos;
 	Vector2f mousePosF;
+	int CheckForChangeWindow = 1;
 };
 

@@ -129,6 +129,7 @@ Mainmenu::~Mainmenu()
 
 void Mainmenu::Run()
 {
+	forChangeWindow = 99;
 	//NEW GAME//
 	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF) || Keyboard::isKeyPressed(Keyboard::Key::N))
 	{
@@ -140,7 +141,7 @@ void Mainmenu::Run()
 		{ 
 			//Checkerror//
 			//printf("%d",forChangeWindow);
-			forChangeWindow = 1;
+			forChangeWindow = 0;
 		}
 	}
 	else {

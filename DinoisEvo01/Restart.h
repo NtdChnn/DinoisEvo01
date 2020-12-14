@@ -8,7 +8,8 @@ public:
 	Restart();
 	~Restart();
 
-	void Check( bool gameOver);
+	void CheckGameOver( bool gameOver);
+	void Check(bool RESERPLZ);
 	bool restartStatus() { return restart; };
 private:
 	bool restart = false;

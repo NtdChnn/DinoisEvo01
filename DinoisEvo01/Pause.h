@@ -16,6 +16,8 @@ public:
 	void Setrun(bool run);
 	int GetForChangewindow();
 	int GetCheckReturnToMenu() { return checkReturnToMenu; };
+	void Updatemousepos(RenderWindow& window);
+
 private:
 	int intPause;
 	int checkpress01;
@@ -29,9 +31,10 @@ private:
 	Text returnToMenuText;
 	RectangleShape returnToMenuBG;
 	int forChangeWindow;
-	int checkReturnToMenu;
+	int checkReturnToMenu = 0;
 
 	Vector2i mousePos;
 	Vector2f mousePosF;
+	Vector2f playerPosition;
 };
 

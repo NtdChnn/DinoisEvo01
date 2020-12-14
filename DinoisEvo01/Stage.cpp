@@ -16,6 +16,7 @@ Stage::~Stage()
 
 void Stage::run(float deltaTime)
 {
+	Run = player.Getrun();
 	//Check ERROR//
 	//printf("\n %.2f", player.Getposition().x);
 	if (pause.Getintpause() == 0 && gameover.statusGame() == false)
@@ -62,8 +63,27 @@ void Stage::run(float deltaTime)
 		if (life >= 1 && itemuse == 0) { life = 1;  immortal = false; }
 
 	}
+	pause.GetPlayerPosition(player.Getposition());
+	pause.Setrun(Run);
+	pause.checkPause();
+	if (pause.GetCheckReturnToMenu() == 1)
+	{
+		checkForChangWindow = 1;
+		forChangeWindow = pause.GetForChangewindow();
+		player.Restart();
+		Ob01.Restart();
+		gameover.Restart();
+		token.Restart();
+		item.Restart();
+		enemy.Restart();
+		itemuse = 0;
+		life = 1;
+		Run = false;
+		player.UpdateRun(Run);
+	}
+	else checkForChangWindow = 0;
 
-	restart.Check(gameover.statusGame());
+	restart.CheckGameOver(gameover.statusGame());
 	if (restart.restartStatus() == true)
 	{
 		player.Restart();
@@ -75,14 +95,6 @@ void Stage::run(float deltaTime)
 		itemuse = 0;
 		life = 1;
 	}
-
-		pause.GetPlayerPosition(player.Getposition());
-		pause.Setrun(player.Getrun());
-		pause.checkPause();
-		if (pause.GetCheckReturnToMenu() == 1)
-		{
-			forChangeWindow = pause.GetForChangewindow();
-		}
 
 		playerhitbox.Update(player.Getposition());
 
@@ -98,6 +110,7 @@ void Stage::run(float deltaTime)
 
 void Stage::Draw(RenderWindow& window)
 {
+	pause.Updatemousepos(window);
 	window.draw(BG);
 	Ob01.Draw(window);
 	player.Draw(window);

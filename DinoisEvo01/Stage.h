@@ -22,11 +22,15 @@ public:
 	void run(float deltaTime);
 	void Draw(RenderWindow& window);
 	Vector2f Getplayerposition() { return player.Getposition(); };
-
+	int GetForChangeWindow() { return forChangeWindow; }
+	int GetCheckForChangeWindow() { return checkForChangWindow; }
+	void UpdateForChangeWindow(int forChangeWindow) { this->forChangeWindow = forChangeWindow; }
 private:
 	Player player;
 	PlayerHitBox playerhitbox;
+
 	RectangleShape BG;
+
 	Obstruction Ob01;
 	Pause pause;
 	GameOver gameover;
@@ -34,10 +38,15 @@ private:
 	Restart restart;
 	Item item;
 	Enemy enemy;
+
+	RenderWindow window;
+
+	int checkForChangWindow = 0;
 	int forChangeWindow;
 	int itemuse = 0;
 	int life = 1 ;
 	float distance;
 	bool immortal = false;
+	bool Run = false;
 };
 
