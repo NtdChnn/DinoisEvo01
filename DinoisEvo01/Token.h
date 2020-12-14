@@ -6,7 +6,7 @@ using namespace sf;
 class Token
 {
 public:
-	Token(int numOfToken, float distance);
+	Token(int numOfToken, float distance, Texture* tokenTexture01, Texture* tokenTexture02, Vector2f sizeTexture01, Vector2f sizeTexture02);
 	~Token();
 
 	bool checkMeat() { return collisionMeat; };
@@ -25,9 +25,6 @@ private:
 
 	int numOfToken;
 	float distance;
-
-	Texture meatTexture;
-	Texture veggieTexture;
 
 	RectangleShape tokenMeat;
 	RectangleShape tokenVeggie;

@@ -1,19 +1,17 @@
 #include "Token.h"
 
-Token::Token(int numOfToken, float distance) :
+Token::Token(int numOfToken, float distance, Texture* tokenTexture01, Texture* tokenTexture02,Vector2f sizeTexture01,Vector2f sizeTexture02) :
 	scoretoken()
 {
 	this->numOfToken = numOfToken;
 	this->distance = distance;
 
-	veggieTexture.loadFromFile("vegetable.png");
-	tokenVeggie.setTexture(&veggieTexture);
-	tokenVeggie.setSize(Vector2f(40.0f, 40.0f));
+	tokenVeggie.setTexture(tokenTexture01);
+	tokenVeggie.setSize(sizeTexture01);
 	tokenMeat.setPosition(Vector2f(((distance-100) / numOfToken)+((distance / numOfToken)/2)-250,500.0f));
 
-	meatTexture.loadFromFile("meat.png");
-	tokenMeat.setTexture(&meatTexture);
-	tokenMeat.setSize(Vector2f(40.0f, 40.0f));
+	tokenMeat.setTexture(tokenTexture02);
+	tokenMeat.setSize(sizeTexture02);
 	tokenVeggie.setPosition(Vector2f(((distance-100) / numOfToken)-125,500.0f));
 }
 

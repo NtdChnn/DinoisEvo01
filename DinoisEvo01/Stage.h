@@ -16,7 +16,7 @@ using namespace std;
 class Stage
 {
 public:
-	Stage(Texture* playertexture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken,Texture* enemyTexture, Vector2u enemyImageCount, float enemySwitchTime, float enemySpeed);
+	Stage(Texture* playertexture, Vector2u imageCount, Vector2f sizePlayer, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken,Texture* tokenTexture01,Texture* tokenTexture02, Vector2f sizeToken01, Vector2f sizeToken02,Texture* enemyTexture, Vector2u enemyImageCount, float enemySwitchTime, float enemySpeed);
 	~Stage();
 
 	void run(float deltaTime);

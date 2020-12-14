@@ -5,7 +5,7 @@ using namespace sf;
 class Player
 {
 public:
-	 Player(Texture* texture, Vector2u imageCount, float switchTime, float speed, float jumpSpeed);
+	 Player(Texture* texture, Vector2u imageCount, Vector2f size, float switchTime, float speed, float jumpSpeed);
 	~Player();
 	
 	void Update(float deltatime);
