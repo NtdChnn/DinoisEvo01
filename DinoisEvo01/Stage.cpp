@@ -21,6 +21,7 @@ void Stage::run(float deltaTime)
 	Active = true;
 	forChangeWindow = 0;
 	Run = player.Getrun();
+	//printf("%d\n", token.GetforTotalScore());
 	//Check ERROR//
 	//printf("\n %.2f", player.Getposition().x);
 	if (pause.Getintpause() == 0 && gameover.statusGame() == false && stagecomplete.GetRun() == false)
@@ -117,7 +118,7 @@ void Stage::run(float deltaTime)
 	if (stagecomplete.GetForChangeWindow() == 20)
 	{
 		forChangeWindow = 20;
-		printf("%d", forChangeWindow);
+		//printf("%d", forChangeWindow);
 		Active = false;
 	}
 	else if (stagecomplete.GetForChangeWindow() == 11)

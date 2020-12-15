@@ -269,7 +269,7 @@ void Mainmenu::Run()
 		menuTextExit.setPosition(Vector2f(510.0f, 600.0f));
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			exit = 1;
+			forChangeWindow = 60;
 		}
 	}
 	else
@@ -281,7 +281,7 @@ void Mainmenu::Run()
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Key::E))
 	{
-		exit = 1;
+		forChangeWindow = 60;
 	}
 
 }
@@ -295,8 +295,6 @@ void Mainmenu::Draw(RenderWindow& window)
 	window.draw(menuTextHowToPlay);
 	window.draw(menuTextExit);
 	window.draw(menuTextCredit);
-	if (exit == 1)
-	{ window.close(); }
 }
 
 void Mainmenu::Updatemousepos(RenderWindow& window)

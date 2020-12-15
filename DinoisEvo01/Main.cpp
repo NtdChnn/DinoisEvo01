@@ -6,6 +6,9 @@
 #include "Mainmenu.h"
 #include "ChooseStage.h"
 #include "HowToPlay.h"
+#include "Credit.h"
+#include "EnterName.h"
+#include "LeaderBoard.h"
 using namespace sf;
 using namespace std;
 
@@ -15,6 +18,9 @@ static const float VIEW_WIDTH = 700.0f;
 int main()
 {
 	srand(time(NULL));
+
+	Font gameFont;
+	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 
 	//window
 	RenderWindow window(VideoMode(1000, 700), "Dino is evo ! !", Style::Close /*| Style::Resize*/);
@@ -31,6 +37,25 @@ int main()
 
 	//HowToPlay
 	HowToPlay howtoplay;
+
+	//Credit
+	Credit credit;
+
+	//LeaderBoard
+	LeaderBoard leaderboard;
+
+	//EnterName
+	EnterName entername(gameFont);
+
+	//TotalScore
+	int totalScore = 0;
+	int scoreStage00 = 0;
+	int scoreStage01 = 0;
+	int scoreStage02 = 0;
+	int scoreStage03 = 0;
+	int scoreStage04 = 0;
+	int scoreStage05 = 0;
+	int scoreStage06 = 0;
 
 	//Stage00
 		Texture playerTexture00;
@@ -127,7 +152,8 @@ int main()
 		obTexture06.loadFromFile("ObStage06.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
 		Stage stage06(&playerTexture06, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.05f, 200.0f, 320.f, 12000, &BG06Texture, &obTexture06, 4, 7, &bMeatTexture, &bMeatTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture06, Vector2u(7, 1), 0.1f, 100.0f);
 
-	
+	//Event
+	Event evnt;
 
 	float deltaTime = 0.0f;
 	Clock clock;
@@ -138,8 +164,9 @@ int main()
 
 	while (window.isOpen())
 	{
-
+	//printf("%d ", totalScore);
 	//printf("%d  %d\n", mainmenu.GetChangeWindow(), stage00.GetForChangeWindow());
+	//printf("%d\n", stage00.GetforTotalScore());
 		
 		deltaTime = clock.restart().asSeconds();
 		mainmenu.Updatemousepos(window);
@@ -152,8 +179,7 @@ mainmenu:	mainmenu.Run();
 			window.display();
 			if (mainmenu.GetChangeWindow() == 10)
 			{
-				printf("Run Enter Name\n");
-				goto stage00;
+				goto entername;
 			}
 			else if (mainmenu.GetChangeWindow() == 20)
 			{
@@ -161,7 +187,7 @@ mainmenu:	mainmenu.Run();
 			}
 			else if (mainmenu.GetChangeWindow() == 30)
 			{
-				printf("Run LeaderBoard\n");
+				goto leaderboard;
 			}
 			else if (mainmenu.GetChangeWindow() == 40)
 			{
@@ -169,7 +195,11 @@ mainmenu:	mainmenu.Run();
 			}
 			else if (mainmenu.GetChangeWindow() == 50)
 			{
-				printf("Run Credit\n");
+				goto credit;
+			}
+			else if (mainmenu.GetChangeWindow() == 60)
+			{
+				window.close();
 			}
 		} 
 
@@ -231,6 +261,49 @@ howtoplay:	howtoplay.Run();
 			}
 		}
 
+		if (entername.GetActive() == true)
+		{
+entername:	entername.Run(window,evnt);
+			window.clear();
+			window.setView(viewCenter);
+			entername.Draw(window);
+			window.display();
+			if (entername.GetforChangeWindow() == 99)
+			{
+				goto mainmenu;
+			}
+			else if (entername.GetforChangeWindow() == 0)
+			{
+				goto stage00;
+			}
+		}
+
+		if (leaderboard.GetActive() == true)
+		{
+leaderboard:	leaderboard.Run();
+			window.clear();
+			window.setView(viewCenter);
+			leaderboard.Draw(window);
+			window.display();
+			if (leaderboard.GetforChangeWindow() == 99)
+			{
+				goto mainmenu;
+			}
+		}
+
+		if (credit.GetActive() == true)
+		{
+credit:		credit.Run();
+			window.clear();
+			window.setView(viewCenter);
+			credit.Draw(window);
+			window.display();
+			if (credit.GetforChangeWindow() == 99)
+			{
+				goto mainmenu;
+			}
+		}
+
 		if (stage00.GetActive() == true)
 		{
 stage00:	stage00.run(deltaTime);
@@ -239,21 +312,26 @@ stage00:	stage00.run(deltaTime);
 			stage00.Draw(window);
 			window.setView(view);
 			window.display();
+			//printf("%d\n", stage00.GetforTotalScore());
 			if (stage00.GetForChangeWindow() == 99)
 			{
 				goto mainmenu;
 			}
 			else if (stage00.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage00;
 				goto choosestage;
 			}
 			else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 1)
-			{
+			{	
+				totalScore += scoreStage00;
 				goto stage01;
 			} else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 2)
 			{
+				totalScore += scoreStage00;
 				goto stage02;
 			}
+			scoreStage00 = stage00.GetforTotalScore();
 		}
 
 		if (stage01.GetActive() == true)
@@ -270,15 +348,19 @@ stage01:	stage01.run(deltaTime);
 			}
 			else if (stage01.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage01;
 				goto choosestage;
 			}
 			else if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 1)
 			{
+				totalScore += scoreStage01;
 				goto stage03;
 			} else  if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 2)
 			{
+				totalScore += scoreStage01;
 				goto stage04;
 			}
+			scoreStage01 = stage01.GetforTotalScore();
 		}
 
 		if (stage02.GetActive() == true)
@@ -295,16 +377,20 @@ stage02:	stage02.run(deltaTime);
 			}
 			else if (stage02.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage02;
 				goto choosestage;
 			}
 			else if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 1)
 			{
+				totalScore += scoreStage02;
 				goto stage05;
 			}
 			else  if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 2)
 			{
+				totalScore += scoreStage02;
 				goto stage06;
 			}
+			scoreStage02 = stage02.GetforTotalScore();
 		}
 
 		if (stage03.GetActive() == true)
@@ -321,12 +407,15 @@ stage03:	stage03.run(deltaTime);
 			}
 			else if (stage03.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage03;
 				goto choosestage;
 			}
 			else if (stage03.GetForChangeWindow() == 11)
 			{
+				totalScore += scoreStage03;
 				goto mainmenu;
 			}
+			scoreStage03 = stage03.GetforTotalScore();
 		}
 
 		if (stage04.GetActive() == true)
@@ -343,13 +432,17 @@ stage04:	stage04.run(deltaTime);
 			}
 			else if (stage04.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage04;
 				goto choosestage;
 			}
 			else if (stage04.GetForChangeWindow() == 11)
 			{
+				totalScore += scoreStage04;
 				goto mainmenu;
 			}
+			scoreStage04 = stage04.GetforTotalScore();
 		}
+
 		if (stage05.GetActive() == true)
 		{
 stage05:	stage05.run(deltaTime);
@@ -364,12 +457,15 @@ stage05:	stage05.run(deltaTime);
 			}
 			else if (stage05.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage05;
 				goto choosestage;
 			}
 			else if (stage05.GetForChangeWindow() == 11)
 			{
+				totalScore += scoreStage05;
 				goto mainmenu;
 			}
+			scoreStage05 = stage05.GetforTotalScore();
 		}
 		if (stage06.GetActive() == true)
 		{
@@ -385,14 +481,17 @@ stage06:	stage06.run(deltaTime);
 			}
 			else if (stage06.GetForChangeWindow() == 20)
 			{
+				totalScore += scoreStage06;
 				goto choosestage;
 			}
 			else if (stage06.GetForChangeWindow() == 11)
 			{
+				totalScore += scoreStage06;
 				goto mainmenu;
 			}
+			scoreStage06 = stage06.GetforTotalScore();
 		}
-		Event evnt;
+
 		while (window.pollEvent(evnt))
 		{
 			switch (evnt.type)

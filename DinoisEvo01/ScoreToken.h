@@ -12,6 +12,7 @@ public:
 	void Draw(RenderWindow& window);
 	void UpdatPosition(Vector2f playerPosition);
 	void UpdateScore(int tokenMeat, int tokenVeggie);
+	int GetTotalScore() { return forTotalScore; };
 private:
 	Font gameFont;
 
@@ -27,5 +28,8 @@ private:
 	int scoreVeggieToken;
 	Text token02X;
 
-};
+	int forTotalScore = 0;
+	Text score;
+	Text scoreCurrent;
 
+};

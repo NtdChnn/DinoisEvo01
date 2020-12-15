@@ -20,6 +20,7 @@ public:
 	void Magnet(Vector2f playerposition);
 	FloatRect GetGlobleBoundsTokenMeat() { return tokenMeat.getGlobalBounds(); };
 	FloatRect GetGlobleBoundsTokenVeggie() { return tokenVeggie.getGlobalBounds(); };
+	int GetforTotalScore() { return scoretoken.GetTotalScore(); };
 
 private:
 

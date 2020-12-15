@@ -31,6 +31,7 @@ public:
 	bool GetActive() { return Active; };
 	int GetStageComplete() { return stageComplete; };
 	int GetNextStage() { return nextStage; };
+	int GetforTotalScore() { return token.GetforTotalScore(); };
 private:
 	Player player;
 	PlayerHitBox playerhitbox;

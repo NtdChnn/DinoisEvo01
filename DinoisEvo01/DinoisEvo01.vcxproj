@@ -147,10 +147,13 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="ChooseStage.cpp" />
+    <ClCompile Include="Credit.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnterName.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="HowToPlay.cpp" />
     <ClCompile Include="Item.cpp" />
+    <ClCompile Include="LeaderBoard.cpp" />
     <ClCompile Include="Magnet.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mainmenu.cpp" />
@@ -163,15 +166,19 @@
     <ClCompile Include="Shield.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="StageComplete.cpp" />
+    <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="Token.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="ChooseStage.h" />
+    <ClInclude Include="Credit.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnterName.h" />
     <ClInclude Include="GameOver.h" />
     <ClInclude Include="HowToPlay.h" />
     <ClInclude Include="Item.h" />
+    <ClInclude Include="LeaderBoard.h" />
     <ClInclude Include="Magnet.h" />
     <ClInclude Include="Mainmenu.h" />
     <ClInclude Include="Obstruction.h" />
@@ -183,6 +190,7 @@
     <ClInclude Include="Shield.h" />
     <ClInclude Include="Stage.h" />
     <ClInclude Include="StageComplete.h" />
+    <ClInclude Include="TextBox.h" />
     <ClInclude Include="Token.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
