@@ -11,6 +11,8 @@
 #include "Restart.h"
 #include "Item.h"
 #include "Enemy.h"
+#include "StageComplete.h"
+
 using namespace sf;
 using namespace std;
 class Stage
@@ -25,6 +27,8 @@ public:
 	int GetForChangeWindow() { return forChangeWindow; }
 	int GetCheckForChangeWindow() { return checkForChangWindow; }
 	void UpdateForChangeWindow(int forChangeWindow) { this->forChangeWindow = forChangeWindow; }
+	void UpdateWindowNow(int windowNow) { this->windowNow = windowNow; };
+	bool GetActive() { return Active; };
 private:
 	Player player;
 	PlayerHitBox playerhitbox;
@@ -38,15 +42,19 @@ private:
 	Restart restart;
 	Item item;
 	Enemy enemy;
+	StageComplete stagecomplete;
 
 	RenderWindow window;
 
 	int checkForChangWindow = 0;
-	int forChangeWindow;
+	int forChangeWindow = 0;
+	int windowNow;
 	int itemuse = 0;
 	int life = 1 ;
 	float distance;
 	bool immortal = false;
 	bool Run = false;
+
+	bool Active = false;
 };
 

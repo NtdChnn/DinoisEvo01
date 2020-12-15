@@ -15,12 +15,14 @@ public:
 	void UpdateWindowChange(int forChangeWindow) { this->forChangeWindow = forChangeWindow; };
 	int GetChangeWindow() { return forChangeWindow; };
 	int GetCheckForChangeWindow() { return CheckForChangeWindow; };
+	bool GetActive() { return Active; };
 
 private:
 	RectangleShape mainmenuBG;
 	Texture BGtexture;
 
 	int forChangeWindow = 99;
+	bool Active = true;
 
 	Font gameFont;
 

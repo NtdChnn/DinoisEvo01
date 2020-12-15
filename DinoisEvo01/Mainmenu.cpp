@@ -129,6 +129,7 @@ Mainmenu::~Mainmenu()
 
 void Mainmenu::Run()
 {
+	Active = true;
 	forChangeWindow = 99;
 	//NEW GAME//
 	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF) || Keyboard::isKeyPressed(Keyboard::Key::N))
@@ -141,7 +142,8 @@ void Mainmenu::Run()
 		{ 
 			//Checkerror//
 			//printf("%d",forChangeWindow);
-			forChangeWindow = 0;
+			forChangeWindow = 10;
+			Active = false;
 		}
 	}
 	else {
@@ -160,8 +162,9 @@ void Mainmenu::Run()
 		menuTextLeaderBoard.setPosition(Vector2f(480.0f, 400.0f));
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			printf("LeaderBoard");
-			forChangeWindow = 20;
+			//printf("LeaderBoard");
+			forChangeWindow = 30;
+			Active = false;
 		}
 	}
 	else {
@@ -185,8 +188,9 @@ void Mainmenu::Run()
 		menuTextStage.setPosition(Vector2f(500.0f, 350.0f));
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			printf("Stage");
-			forChangeWindow = 30;
+			//printf("Stage");
+			forChangeWindow = 20;
+			Active = false;
 		}
 	}
 	else
@@ -211,8 +215,9 @@ void Mainmenu::Run()
 		menuTextHowToPlay.setPosition(Vector2f(480.0f, 450.0f));
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			printf("How To Play");
+			//printf("How To Play");
 			forChangeWindow = 40;
+			Active = false;
 		}
 	}
 	else
@@ -237,8 +242,9 @@ void Mainmenu::Run()
 		menuTextCredit.setPosition(Vector2f(490.0f, 500.0f));
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
-			printf("Credit");
+			//printf("Credit");
 			forChangeWindow = 50;
+			Active = false;
 		}
 	}
 	else

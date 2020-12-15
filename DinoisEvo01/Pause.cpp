@@ -47,13 +47,13 @@ void Pause::GetPlayerPosition(Vector2f(position))
 	pauseBG.setPosition(position.x - 500, 0);
 	pauseText01.setPosition(position.x - 325, 200);
 	pauseText02.setPosition(position.x - 325, 300);
-	returnToMenuBG.setPosition(position.x + 300, 590);
 	returnToMenuText.setPosition(Vector2f(position.x + 250, 600));
 }
 
 
 void Pause::checkPause()
 {
+	forChangeWindow = 0;
 	//CheckERROR//
 	//printf("%d", intPause);
 	if (Keyboard::isKeyPressed(Keyboard::Key::P) && run == true)
@@ -76,7 +76,6 @@ void Pause::checkPause()
 			Sleep(100);
 		}
 	}
-
 	if (mousePos.x >= 650 && mousePos.x <= 950 && mousePos.y <= 615 && mousePos.y >= 565 && intPause == 1)
 	{
 		returnToMenuText.setOutlineColor(Color::Black);
@@ -84,7 +83,7 @@ void Pause::checkPause()
 		returnToMenuText.setFillColor(Gray);
 		returnToMenuText.setCharacterSize(30);
 		returnToMenuText.setPosition(returnToMenuText.getPosition().x-30, 600);
-		printf("Collision\n");
+		//printf("Collision\n");
 		if (Mouse::isButtonPressed(Mouse::Left) || Keyboard::isKeyPressed(Keyboard::Key::N))
 		{
 			//Checkerror//

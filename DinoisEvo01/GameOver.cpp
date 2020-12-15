@@ -4,12 +4,16 @@ GameOver::GameOver()
 {
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 	gameOverText.setFont(gameFont);
+	gameOverText.setOutlineColor(Color::White);
+	gameOverText.setOutlineThickness(5);
 	gameOverText.setFillColor(Color::Black);
 	gameOverText.setStyle(Text::Regular);
 	gameOverText.setString("GAME OVER");
 	gameOverText.setCharacterSize(100);
 
 	pressRtoRestartText.setFont(gameFont);
+	pressRtoRestartText.setOutlineColor(Color::White);
+	pressRtoRestartText.setOutlineThickness(3);
 	pressRtoRestartText.setFillColor(Color::Black);
 	pressRtoRestartText.setStyle(Text::Regular);
 	pressRtoRestartText.setString("Prees 'R' to restart");

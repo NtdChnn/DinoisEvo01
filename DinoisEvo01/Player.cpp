@@ -75,6 +75,12 @@ void Player::Update(float deltatime)
 		body.setTextureRect(animation.uvRect);
 	}
 	body.move(movement);
+
+	//CHEAT//
+	if (Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::E))
+	{
+		body.setPosition(12000, 350);
+	}
 }
 
 void Player::Draw(RenderWindow& window)

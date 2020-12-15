@@ -29,7 +29,6 @@ private:
 	RectangleShape pauseBG;
 
 	Text returnToMenuText;
-	RectangleShape returnToMenuBG;
 	int forChangeWindow;
 	int checkReturnToMenu = 0;
 

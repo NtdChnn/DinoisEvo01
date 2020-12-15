@@ -18,7 +18,7 @@ ScoreToken::ScoreToken(Texture* token01Texture,Texture* token02Texture)
 	token01Score.setStyle(Text::Regular);
 	token01Score.setCharacterSize(20);
 
-	token01.setTexture(token01Texture);
+	token01.setTexture(token02Texture);
 	token01.setSize(Vector2f(40.0f, 40.0f));
 
 	token02X.setFont(gameFont);
@@ -36,7 +36,7 @@ ScoreToken::ScoreToken(Texture* token01Texture,Texture* token02Texture)
 	token02Score.setStyle(Text::Regular);
 	token02Score.setCharacterSize(20);
 
-	token02.setTexture(token02Texture);
+	token02.setTexture(token01Texture);
 	token02.setSize(Vector2f(40.0f, 40.0f));
 }
 

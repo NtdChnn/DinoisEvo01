@@ -70,7 +70,7 @@ void Enemy::UpdatePosition(Vector2f playerPosition, Vector2f playerOrigin)
 	}
 	if (showStatus == 1)
 	{
-		enemy.setPosition(playerPosition.x + 1000, playerPosition.y - 100);
+		enemy.setPosition(playerPosition.x + 1000, 250);
 		showStatus = 2;
 	}
 	if (showStatus == 2 && enemy.getPosition().x < playerPosition.x - 400)

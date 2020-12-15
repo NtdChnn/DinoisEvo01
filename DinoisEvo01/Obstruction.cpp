@@ -50,7 +50,7 @@ void Obstruction::Run(Vector2f playerPosition)
 	{
 		//Check Error//
 		//printf("Ob MOVE ! !");
-		obstrutction.move(Vector2f(1100 + movex,0));
+		obstrutction.move(Vector2f(1200 + movex,0));
 	}
 }
 
