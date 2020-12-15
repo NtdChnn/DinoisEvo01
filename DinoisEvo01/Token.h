@@ -11,8 +11,8 @@ public:
 
 	bool checkMeat() { return collisionMeat; };
 	bool checkVeggie() { return collisionVeggie; };
-	int numMeat() { return Meat; };
-	int numVeggie() { return Veggie; };
+	int numToken01() { return Meat; };
+	int numToken02() { return Veggie; };
 	void Draw(RenderWindow& window);
 	void Update(FloatRect playerGlobleBounds, Vector2f playerPosition);
 	void CheckOb(FloatRect ObGlobleBounds);

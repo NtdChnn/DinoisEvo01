@@ -128,7 +128,6 @@ void StageComplete::Update(float distance, Vector2f playerPosition, int numToken
 		textNextStage.setFillColor(Color::Black);
 		textNextStage.setCharacterSize(25);
 		textNextStage.setPosition(playerPosition.x + 250, 550);
-		forChangeWindow = 0;
 	}
 
 	if (playerPosition.x >= distance)

@@ -13,6 +13,9 @@ public:
 	void UpdateMousePos(RenderWindow& window);
 	bool GetActive() { return Active; };
 	int GetForChangeWindow() { return forChangeWindow; };
+	void UpdateUnlockStatus00(int stage00stagecomplete) { this->stage00statusUnlock = stage00stagecomplete; };
+	void UpdateUnlockStatus01(int stage01stagecomplete) { this->stage01statusUnlock = stage01stagecomplete; };
+	void UpdateUnlockStatus02(int stage02stagecomplete) { this->stage02statusUnlock = stage02stagecomplete; };
 private:
 	RectangleShape ChooseStageBG;
 	RectangleShape stage00BG;
@@ -49,5 +52,9 @@ private:
 
 	Vector2i mousePos;
 	Vector2f mousePosF;
+
+	int stage00statusUnlock = 0;
+	int stage01statusUnlock = 0;
+	int stage02statusUnlock = 0;
 };
 

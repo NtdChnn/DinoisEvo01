@@ -29,6 +29,8 @@ public:
 	void UpdateForChangeWindow(int forChangeWindow) { this->forChangeWindow = forChangeWindow; }
 	void UpdateWindowNow(int windowNow) { this->windowNow = windowNow; };
 	bool GetActive() { return Active; };
+	int GetStageComplete() { return stageComplete; };
+	int GetNextStage() { return nextStage; };
 private:
 	Player player;
 	PlayerHitBox playerhitbox;
@@ -54,6 +56,8 @@ private:
 	float distance;
 	bool immortal = false;
 	bool Run = false;
+	int nextStage = 0;
+	int stageComplete = 0;
 
 	bool Active = false;
 };

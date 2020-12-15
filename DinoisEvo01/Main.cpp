@@ -153,7 +153,7 @@ mainmenu:	mainmenu.Run();
 			if (mainmenu.GetChangeWindow() == 10)
 			{
 				printf("Run Enter Name\n");
-				goto choosestage;
+				goto stage00;
 			}
 			else if (mainmenu.GetChangeWindow() == 20)
 			{
@@ -181,6 +181,9 @@ choosestage:choosestage.Run();
 			choosestage.UpdateMousePos(window);
 			choosestage.Draw(window);
 			window.display();
+			choosestage.UpdateUnlockStatus00(stage00.GetStageComplete());
+			choosestage.UpdateUnlockStatus01(stage01.GetStageComplete());
+			choosestage.UpdateUnlockStatus02(stage02.GetStageComplete());
 			if (choosestage.GetForChangeWindow() == 0)
 			{
 				goto stage00;
@@ -244,9 +247,12 @@ stage00:	stage00.run(deltaTime);
 			{
 				goto choosestage;
 			}
-			else if (stage00.GetForChangeWindow() == 11)
+			else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 1)
 			{
 				goto stage01;
+			} else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 2)
+			{
+				goto stage02;
 			}
 		}
 
@@ -266,15 +272,18 @@ stage01:	stage01.run(deltaTime);
 			{
 				goto choosestage;
 			}
-			else if (stage01.GetForChangeWindow() == 11)
+			else if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 1)
 			{
-				goto stage02;
+				goto stage03;
+			} else  if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 2)
+			{
+				goto stage04;
 			}
 		}
 
 		if (stage02.GetActive() == true)
 		{
-		stage02:	stage02.run(deltaTime);
+stage02:	stage02.run(deltaTime);
 			view.setCenter(stage02.Getplayerposition().x, 350.0f);
 			window.clear();
 			stage02.Draw(window);
@@ -288,9 +297,13 @@ stage01:	stage01.run(deltaTime);
 			{
 				goto choosestage;
 			}
-			else if (stage02.GetForChangeWindow() == 11)
+			else if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 1)
 			{
-				goto stage03;
+				goto stage05;
+			}
+			else  if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 2)
+			{
+				goto stage06;
 			}
 		}
 
@@ -312,7 +325,7 @@ stage03:	stage03.run(deltaTime);
 			}
 			else if (stage03.GetForChangeWindow() == 11)
 			{
-				goto stage04;
+				goto mainmenu;
 			}
 		}
 
@@ -334,7 +347,7 @@ stage04:	stage04.run(deltaTime);
 			}
 			else if (stage04.GetForChangeWindow() == 11)
 			{
-				goto stage05;
+				goto mainmenu;
 			}
 		}
 		if (stage05.GetActive() == true)
@@ -355,7 +368,7 @@ stage05:	stage05.run(deltaTime);
 			}
 			else if (stage05.GetForChangeWindow() == 11)
 			{
-				goto stage06;
+				goto mainmenu;
 			}
 		}
 		if (stage06.GetActive() == true)

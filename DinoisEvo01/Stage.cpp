@@ -3,6 +3,8 @@
 Stage::Stage(Texture* playertexture, Vector2u imageCount, Vector2f sizePlayer, float switchTime, float speed, float jumpSpeed, float distance, Texture* BGtexture, Texture* Ob01texture, int frequency, int numOfToken, Texture* tokenTexture01, Texture* tokenTexture02,Vector2f sizeToken01,Vector2f sizeToken02, Texture* enemyTexture, Vector2u enemyImageCount, float enemySwitchTime, float enemySpeed) :
 	player(playertexture, imageCount,sizePlayer, switchTime, speed, jumpSpeed), pause(), gameover() , Ob01(Ob01texture, Vector2f(44.3, 74.0f),Vector2f(1000,470), frequency, distance), playerhitbox(Vector2f(60.0f,40.0f),player.GetOrigin()), token(numOfToken,distance,tokenTexture01,tokenTexture02,sizeToken01,sizeToken02), restart(), item(),enemy(enemyTexture,enemyImageCount,enemySwitchTime,enemySpeed),stagecomplete()
 {
+	srand(time(NULL));
+
 	this->distance = distance;
 	srand(time(NULL));
 	BG.setSize(Vector2f(15000,700));
@@ -66,13 +68,56 @@ void Stage::run(float deltaTime)
 			//printf("%d\n", itemuse);
 			if (life >= 1 && itemuse == 0) { life = 1;  immortal = false; }
 		}
+
+		if (player.Getposition().x >= distance)
+		{
+			nextStage = 0;
+			if (token.numToken01() == token.numToken02())
+			{
+				if (stageComplete == 0)
+				{
+					stageComplete = (rand() % 1) + 1;
+					nextStage = (rand() % 1) + 1;
+				}
+				else if (stageComplete == 1 || stageComplete == 2)
+				{
+					stageComplete = 3;
+					nextStage = (rand() % 1) + 1;
+				}
+			}
+			if (token.numToken01() > token.numToken02())
+			{
+				nextStage = 1;
+				if (stageComplete == 0 || stageComplete == 1)
+				{
+					stageComplete = 1;
+				}
+				else if (stageComplete == 2)
+				{
+					stageComplete = 3;
+				}
+			}
+			else if (token.numToken02() > token.numToken01())
+			{
+				nextStage = 2;
+				if (stageComplete == 0 || stageComplete == 2)
+					{
+						stageComplete = 2;
+					}
+					else if (stageComplete == 1)
+					{
+						stageComplete = 3;
+					}
+			}
+		}
 	}
 	
-	stagecomplete.Update(distance, player.Getposition(), token.numMeat(), token.numVeggie());
+	stagecomplete.Update(distance, player.Getposition(), token.numToken01(), token.numToken02());
 
 	if (stagecomplete.GetForChangeWindow() == 20)
 	{
 		forChangeWindow = 20;
+		printf("%d", forChangeWindow);
 		Active = false;
 	}
 	else if (stagecomplete.GetForChangeWindow() == 11)
