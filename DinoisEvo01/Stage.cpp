@@ -69,12 +69,7 @@ void Stage::run(float deltaTime)
 	}
 	
 	stagecomplete.Update(distance, player.Getposition(), token.numMeat(), token.numVeggie());
-	//stagecomplete.UpdateForChangeWindow(windowNow);
-	/*if (stagecomplete.GetRun() == true)
-	{
-		printf("%d\n",stagecomplete.GetForChangeWindow());
-		forChangeWindow = stagecomplete.GetForChangeWindow();
-	}*/
+
 	if (stagecomplete.GetForChangeWindow() == 20)
 	{
 		forChangeWindow = 20;

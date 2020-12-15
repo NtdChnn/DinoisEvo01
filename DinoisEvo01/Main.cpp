@@ -4,6 +4,7 @@
 #include <sstream> 
 #include "Stage.h"
 #include "Mainmenu.h"
+#include "ChooseStage.h"
 using namespace sf;
 using namespace std;
 
@@ -23,6 +24,9 @@ int main()
 
 	//Mainmenu
 	Mainmenu mainmenu;
+
+	//ChooseStage
+	ChooseStage choosestage;
 
 
 	//Stage00
@@ -131,197 +135,6 @@ int main()
 
 	while (window.isOpen())
 	{
-		/*stage00.UpdateWindowNow(forChangewindow);
-		stage01.UpdateWindowNow(forChangewindow);
-		stage02.UpdateWindowNow(forChangewindow);
-		stage03.UpdateWindowNow(forChangewindow);
-		stage04.UpdateWindowNow(forChangewindow);
-		stage05.UpdateWindowNow(forChangewindow);
-		stage06.UpdateWindowNow(forChangewindow);
-		deltaTime = clock.restart().asSeconds();
-		mainmenu.Updatemousepos(window);
-
-		//CheckERROR//
-		//printf("%d\n", mainmenu.GetChangeWindow());
-		if (forChangewindow == 99)
-		{
-			forChangewindow = mainmenu.GetChangeWindow();
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 0)
-		{
-			if (stage00.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage00.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else 	if (forChangewindow == 1)
-		{
-			if (stage01.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage01.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 2)
-		{
-			if (stage02.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage02.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 3)
-		{
-			if (stage03.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage03.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 4)
-		{
-			if (stage04.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage04.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 5)
-		{
-			if (stage05.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage05.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-		else	if (forChangewindow == 6)
-		{
-			if (stage06.GetCheckForChangeWindow() == 1)
-			{
-				forChangewindow = stage06.GetForChangeWindow();
-			}
-			//CheckERROR//
-			//printf("%d\n", forChangewindow);
-		}
-
-
-		//CheckERROR//
-		//printf("%d\n", forChangewindow);
-		switch (forChangewindow)
-		{
-		case 99: //Main Menu
-		{
-			mainmenu.Run();
-			window.clear();
-			window.setView(viewCenter);
-			mainmenu.Draw(window);
-			window.display();
-			break;
-		}
-		case 88: //Story
-		{
-			break;
-		}
-		case 10: //Enter Name
-		{
-			break;
-		}
-		case 20: //Choose Stage
-		{
-			break;
-		}
-		case 30: //LeaderBoard
-		{
-			break;
-		}
-		case 40: //HowToPlay
-		{
-			break;
-		}
-		case 50: //Credit
-		{
-			break;
-		}
-		case 0: //STAGE00
-		{
-			stage00.run(deltaTime);
-			view.setCenter(stage00.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage00.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 1: //STAGE01
-		{
-			stage01.run(deltaTime);
-			view.setCenter(stage01.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage01.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 2: //STAGE02
-		{
-			stage02.run(deltaTime);
-			view.setCenter(stage02.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage02.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 3: //STAGE03
-		{
-			stage03.run(deltaTime);
-			view.setCenter(stage03.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage03.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 4: //STAGE04
-		{
-			stage04.run(deltaTime);
-			view.setCenter(stage04.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage04.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 5: //STAGE05
-		{
-			stage05.run(deltaTime);
-			view.setCenter(stage05.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage05.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		case 6: //STAGE06
-		{
-			stage06.run(deltaTime);
-			view.setCenter(stage06.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage06.Draw(window);
-			window.setView(view);
-			window.display();
-			break;
-		}
-		} */
 
 	//printf("%d  %d\n", mainmenu.GetChangeWindow(), stage00.GetForChangeWindow());
 		
@@ -329,7 +142,7 @@ int main()
 		mainmenu.Updatemousepos(window);
 		if (mainmenu.GetActive() == true)
 		{
-			mainmenu.Run();
+mainmenu:	mainmenu.Run();
 			window.clear();
 			window.setView(viewCenter);
 			mainmenu.Draw(window);
@@ -337,16 +150,11 @@ int main()
 			if (mainmenu.GetChangeWindow() == 10)
 			{
 				printf("Run Enter Name\n");
-				stage00.run(deltaTime);
-				view.setCenter(stage00.Getplayerposition().x, 350.0f);
-				window.clear();
-				stage00.Draw(window);
-				window.setView(view);
-				window.display();
+				goto choosestage;
 			}
 			else if (mainmenu.GetChangeWindow() == 20)
 			{
-				printf("Run Choose Stage\n");
+				goto choosestage;
 			}
 			else if (mainmenu.GetChangeWindow() == 30)
 			{
@@ -362,9 +170,48 @@ int main()
 			}
 		} 
 
+		if (choosestage.GetActive() == true)
+		{
+choosestage:choosestage.Check();
+			window.clear();
+			window.setView(viewCenter);
+			choosestage.UpdateMousePos(window);
+			choosestage.Draw(window);
+			window.display();
+			if (choosestage.GetForChangeWindow() == 0)
+			{
+				goto stage00;
+				printf("Yes");
+			} 
+			else if (choosestage.GetForChangeWindow() == 1)
+			{
+				goto stage01;
+			}
+			else if (choosestage.GetForChangeWindow() == 2)
+			{
+				goto stage02;
+			}
+			else if (choosestage.GetForChangeWindow() == 3)
+			{
+				goto stage03;
+			}
+			else if (choosestage.GetForChangeWindow() == 4)
+			{
+				goto stage04;
+			}
+			else if (choosestage.GetForChangeWindow() == 5)
+			{
+				goto stage05;
+			}
+			else if (choosestage.GetForChangeWindow() == 6)
+			{
+				goto stage06;
+			}
+		}
+
 		if (stage00.GetActive() == true)
 		{
-			stage00.run(deltaTime);
+stage00:	stage00.run(deltaTime);
 			view.setCenter(stage00.Getplayerposition().x, 350.0f);
 			window.clear();
 			stage00.Draw(window);
@@ -372,15 +219,11 @@ int main()
 			window.display();
 			if (stage00.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage00.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage00.GetForChangeWindow() == 11)
 			{
@@ -398,15 +241,11 @@ stage01:	stage01.run(deltaTime);
 			window.display();
 			if (stage01.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage01.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage01.GetForChangeWindow() == 11)
 			{
@@ -424,15 +263,11 @@ stage01:	stage01.run(deltaTime);
 			window.display();
 			if (stage02.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage02.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage02.GetForChangeWindow() == 11)
 			{
@@ -450,15 +285,11 @@ stage03:	stage03.run(deltaTime);
 			window.display();
 			if (stage03.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage03.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage03.GetForChangeWindow() == 11)
 			{
@@ -476,15 +307,11 @@ stage04:	stage04.run(deltaTime);
 			window.display();
 			if (stage04.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage04.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage04.GetForChangeWindow() == 11)
 			{
@@ -501,15 +328,11 @@ stage05:	stage05.run(deltaTime);
 			window.display();
 			if (stage05.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage05.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage05.GetForChangeWindow() == 11)
 			{
@@ -526,23 +349,15 @@ stage06:	stage06.run(deltaTime);
 			window.display();
 			if (stage06.GetForChangeWindow() == 99)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 			else if (stage06.GetForChangeWindow() == 20)
 			{
-				printf("Run Choose Stage");
+				goto choosestage;
 			}
 			else if (stage06.GetForChangeWindow() == 11)
 			{
-				mainmenu.Run();
-				window.clear();
-				window.setView(viewCenter);
-				mainmenu.Draw(window);
-				window.display();
+				goto mainmenu;
 			}
 		}
 		Event evnt;

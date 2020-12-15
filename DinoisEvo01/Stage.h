@@ -45,7 +45,7 @@ private:
 	StageComplete stagecomplete;
 
 	RenderWindow window;
-
+	
 	int checkForChangWindow = 0;
 	int forChangeWindow = 0;
 	int windowNow;
