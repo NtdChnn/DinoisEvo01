@@ -8,7 +8,7 @@ public:
 	ChooseStage();
 	~ChooseStage();
 
-	void Check();
+	void Run();
 	void Draw(RenderWindow& window);
 	void UpdateMousePos(RenderWindow& window);
 	bool GetActive() { return Active; };
@@ -22,6 +22,9 @@ private:
 	RectangleShape stage04BG;
 	RectangleShape stage05BG;
 	RectangleShape stage06BG;
+	
+	Text returnToMenuText;
+	RectangleShape returnToMenuBG;
 
 	Texture ChooseStageBGTexture;
 

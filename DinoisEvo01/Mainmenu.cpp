@@ -31,10 +31,10 @@ Mainmenu::Mainmenu()
 
 	//STAGE//
 	{
-		menuBGtextS.setSize(Vector2f(60.0f, 50.0f));
+		menuBGtextS.setSize(Vector2f(100.0f, 50.0f));
 		STexture.loadFromFile("BGforMenuC.png");
 		menuBGtextS.setTexture(&STexture);
-		menuBGtextS.setOrigin(Vector2f(30.0f, 25.0f));
+		menuBGtextS.setOrigin(Vector2f(50.0f, 25.0f));
 		menuBGtextS.setPosition(Vector2f(510.0f, 350.0f));
 
 		menuTextStage.setFont(gameFont);

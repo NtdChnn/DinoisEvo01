@@ -99,13 +99,26 @@ ChooseStage::ChooseStage()
 	stage06Text.setString("STAGE06");
 	stage06Text.setCharacterSize(20);
 	stage06Text.setPosition(stage06BG.getPosition().x+33, stage06BG.getPosition().y+121);
+
+	returnToMenuBG.setSize(Vector2f(300, 50));
+	returnToMenuBG.setPosition(Vector2f(650, 570));
+
+	returnToMenuText.setFont(gameFont);
+	returnToMenuText.setOutlineColor(Color::Black);
+	returnToMenuText.setOutlineThickness(2);
+	returnToMenuText.setFillColor(Color::White);
+	returnToMenuText.setStyle(Text::Regular);
+	returnToMenuText.setString("Return To Menu");
+	returnToMenuText.setCharacterSize(25);
+	returnToMenuText.setOrigin(Vector2f(75, 25));
+	returnToMenuText.setPosition(Vector2f(750, 600));
 }
 
 ChooseStage::~ChooseStage()
 {
 }
 
-void ChooseStage::Check()
+void ChooseStage::Run()
 {
 	Active = true;
 	forChangeWindow = 10;
@@ -227,6 +240,22 @@ void ChooseStage::Check()
 		stage06Text.setOutlineColor(Color::Black);
 		stage06Text.setFillColor(Color::White);
 	}
+
+	//MainMenu//
+	if (this->returnToMenuBG.getGlobalBounds().contains(mousePosF))
+	{
+		returnToMenuText.setOutlineColor(Color::Black);
+		returnToMenuText.setFillColor(Color::Red);
+		if (Mouse::isButtonPressed(Mouse::Left))
+		{
+			forChangeWindow = 99;
+			Active = false;
+		}
+	}
+	else {
+		returnToMenuText.setOutlineColor(Color::Black);
+		returnToMenuText.setFillColor(Color::White);
+	}
 }
 
 void ChooseStage::Draw(RenderWindow& window)
@@ -239,6 +268,7 @@ void ChooseStage::Draw(RenderWindow& window)
 	window.draw(stage04Text);
 	window.draw(stage05Text);
 	window.draw(stage06Text);
+	window.draw(returnToMenuText);
 	/*window.draw(stage00BG);
 	window.draw(stage01BG);
 	window.draw(stage02BG);

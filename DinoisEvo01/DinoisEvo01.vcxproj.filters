@@ -69,6 +69,9 @@
     <ClCompile Include="ChooseStage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HowToPlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ChooseStage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="HowToPlay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,6 +5,7 @@
 #include "Stage.h"
 #include "Mainmenu.h"
 #include "ChooseStage.h"
+#include "HowToPlay.h"
 using namespace sf;
 using namespace std;
 
@@ -28,6 +29,8 @@ int main()
 	//ChooseStage
 	ChooseStage choosestage;
 
+	//HowToPlay
+	HowToPlay howtoplay;
 
 	//Stage00
 		Texture playerTexture00;
@@ -162,7 +165,7 @@ mainmenu:	mainmenu.Run();
 			}
 			else if (mainmenu.GetChangeWindow() == 40)
 			{
-				printf("Run How To Play\n");
+				goto howtoplay;
 			}
 			else if (mainmenu.GetChangeWindow() == 50)
 			{
@@ -172,7 +175,7 @@ mainmenu:	mainmenu.Run();
 
 		if (choosestage.GetActive() == true)
 		{
-choosestage:choosestage.Check();
+choosestage:choosestage.Run();
 			window.clear();
 			window.setView(viewCenter);
 			choosestage.UpdateMousePos(window);
@@ -181,7 +184,6 @@ choosestage:choosestage.Check();
 			if (choosestage.GetForChangeWindow() == 0)
 			{
 				goto stage00;
-				printf("Yes");
 			} 
 			else if (choosestage.GetForChangeWindow() == 1)
 			{
@@ -206,6 +208,23 @@ choosestage:choosestage.Check();
 			else if (choosestage.GetForChangeWindow() == 6)
 			{
 				goto stage06;
+			}
+			else if (choosestage.GetForChangeWindow() == 99)
+			{
+				goto mainmenu;
+			}
+		}
+
+		if (howtoplay.GetActive() == true)
+		{
+howtoplay:	howtoplay.Run();
+			window.clear();
+			window.setView(viewCenter);
+			howtoplay.Draw(window);
+			window.display();
+			if (howtoplay.GetforChangeWindow() == 99)
+			{
+				goto mainmenu;
 			}
 		}
 
