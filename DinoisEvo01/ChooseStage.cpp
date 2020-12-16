@@ -1,6 +1,7 @@
 #include "ChooseStage.h"
 
 ChooseStage::ChooseStage()
+
 {
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 

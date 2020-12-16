@@ -26,8 +26,6 @@ private:
 	RectangleShape stage05BG;
 	RectangleShape stage06BG;
 
-	Event evnt;
-
 	Text returnToMenuText;
 	RectangleShape returnToMenuBG;
 

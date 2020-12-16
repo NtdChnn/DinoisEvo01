@@ -22,8 +22,6 @@ private:
 
 	RectangleShape stageCompleteBG;
 
-	Event evnt;
-
 	Text textStage;
 	Text textComplete;
 

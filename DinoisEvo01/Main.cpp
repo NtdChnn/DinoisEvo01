@@ -71,7 +71,7 @@ int main()
 		meatTexture.loadFromFile("meat.png");
 		Texture veggieTexture;
 		veggieTexture.loadFromFile("vegetable.png");
-		Stage stage00(&playerTexture00, Vector2u(8, 2), Vector2f(117.f, 108.0f), 0.05f, 200.0f, 320.f, 7000, &BG00Texture, &obTexture00, 8, 4, &meatTexture, &veggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture00, Vector2u(7, 1), 0.1f, 100.0f);
+		Stage stage00(&playerTexture00, Vector2u(8, 2), Vector2f(117.f, 108.0f), 0.07f, 200.0f, 320.f, 7000, &BG00Texture, &obTexture00, 8, 4, &meatTexture, &veggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture00, Vector2u(7, 1), 0.1f, 100.0f);
 
 
 	//Stage01
@@ -103,7 +103,7 @@ int main()
 		bMeatTexture.loadFromFile("big_meat.png");
 		Texture obTexture02;
 		obTexture02.loadFromFile("ObStage02.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
-		Stage stage02(&playerTexture02, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.05f, 200.0f, 320.f, 9000, &BG02Texture, &obTexture02, 6, 5, &sMeatTexture, &bMeatTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture02, Vector2u(7, 1), 0.1f, 100.0f);
+		Stage stage02(&playerTexture02, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.07f, 200.0f, 320.f, 9000, &BG02Texture, &obTexture02, 6, 5, &sMeatTexture, &bMeatTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture02, Vector2u(7, 1), 0.1f, 100.0f);
 
 
 	//Stage03
@@ -115,7 +115,7 @@ int main()
 		enemyTexture03.loadFromFile("enemyremovebg.png");
 		Texture obTexture03;
 		obTexture03.loadFromFile("ObStage03.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
-		Stage stage03(&playerTexture03, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.05f, 200.0f, 320.f, 12000, &BG03Texture, &obTexture03, 4, 7, &sVeggieTexture, &sVeggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture03, Vector2u(7, 1), 0.1f, 100.0f);
+		Stage stage03(&playerTexture03, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.07f, 200.0f, 320.f, 12000, &BG03Texture, &obTexture03, 4, 7, &sVeggieTexture, &sVeggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture03, Vector2u(7, 1), 0.1f, 100.0f);
 
 
 	//Stage04
@@ -127,7 +127,7 @@ int main()
 		enemyTexture04.loadFromFile("enemyremovebg.png");
 		Texture obTexture04;
 		obTexture04.loadFromFile("ObStage04.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
-		Stage stage04(&playerTexture04, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.05f, 200.0f, 320.f, 12000, &BG04Texture, &obTexture04, 4, 7, &bVeggieTexture, &bVeggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture04, Vector2u(7, 1), 0.1f, 100.0f);
+		Stage stage04(&playerTexture04, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.07f, 200.0f, 320.f, 12000, &BG04Texture, &obTexture04, 4, 7, &bVeggieTexture, &bVeggieTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture04, Vector2u(7, 1), 0.1f, 100.0f);
 
 
 	//Stage05
@@ -151,7 +151,7 @@ int main()
 		enemyTexture06.loadFromFile("enemyremovebg.png");
 		Texture obTexture06;
 		obTexture06.loadFromFile("ObStage06.png"); //&Cactus01texture, Vector2f(89.0f,148.0f), Vector2f(1851.0f,501.0f)
-		Stage stage06(&playerTexture06, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.05f, 200.0f, 320.f, 12000, &BG06Texture, &obTexture06, 4, 7, &bMeatTexture, &bMeatTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture06, Vector2u(7, 1), 0.1f, 100.0f);
+		Stage stage06(&playerTexture06, Vector2u(8, 2), Vector2f(117.0f, 108.0f), 0.07f, 200.0f, 320.f, 12000, &BG06Texture, &obTexture06, 4, 7, &bMeatTexture, &bMeatTexture, Vector2f(40.0f, 40.0f), Vector2f(40.0f, 40.0f), &enemyTexture06, Vector2u(7, 1), 0.1f, 100.0f);
 
 
 	float deltaTime = 0.0f;
@@ -219,9 +219,9 @@ int main()
 
 	while (window.isOpen())
 	{
-	//printf("%d ", totalScore);
-	//printf("%d  %d\n", mainmenu.GetChangeWindow(), stage00.GetForChangeWindow());
-	//printf("%d\n", stage00.GetforTotalScore());
+		//printf("%d ", totalScore);
+		//printf("%d  %d\n", mainmenu.GetChangeWindow(), stage00.GetForChangeWindow());
+		//printf("%d\n", stage00.GetforTotalScore());
 		Event evnt;
 
 		while (window.pollEvent(evnt))
@@ -238,7 +238,7 @@ int main()
 		mainmenu.Updatemousepos(window);
 		if (mainmenu.GetActive() == true)
 		{
-mainmenu:	mainmenu.Run();
+		mainmenu:	mainmenu.Run();
 			window.clear();
 			window.setView(viewCenter);
 			mainmenu.Draw(window);
@@ -267,86 +267,86 @@ mainmenu:	mainmenu.Run();
 			{
 				window.close();
 			}
-		} 
+		}
 
 		if (choosestage.GetActive() == true)
 		{
-choosestage:	if (StageSound.getStatus() != StageSound.Playing)
+		choosestage:	if (StageSound.getStatus() != StageSound.Playing)
 		{
 			StageSound.play();
 		}
-			choosestage.Run();
-			window.clear();
-			window.setView(viewCenter);
-			choosestage.UpdateMousePos(window);
-			choosestage.Draw(window);
-			window.display();
-			choosestage.UpdateUnlockStatus00(stage00.GetStageComplete());
-			choosestage.UpdateUnlockStatus01(stage01.GetStageComplete());
-			choosestage.UpdateUnlockStatus02(stage02.GetStageComplete());
-			if (choosestage.GetForChangeWindow() == 0)
-			{
-				StageSound.stop();
-				goto stage00;
-			} 
-			else if (choosestage.GetForChangeWindow() == 1)
-			{
-				StageSound.stop();
-				goto stage01;
-			}
-			else if (choosestage.GetForChangeWindow() == 2)
-			{
-				StageSound.stop();
-				goto stage02;
-			}
-			else if (choosestage.GetForChangeWindow() == 3)
-			{
-				StageSound.stop();
-				goto stage03;
-			}
-			else if (choosestage.GetForChangeWindow() == 4)
-			{
-				StageSound.stop();
-				goto stage04;
-			}
-			else if (choosestage.GetForChangeWindow() == 5)
-			{
-				StageSound.stop();
-				goto stage05;
-			}
-			else if (choosestage.GetForChangeWindow() == 6)
-			{
-				StageSound.stop();
-				goto stage06;
-			}
-			else if (choosestage.GetForChangeWindow() == 99)
-			{
-				StageSound.stop();
-				goto mainmenu;
-			}
+		choosestage.Run();
+		window.clear();
+		window.setView(viewCenter);
+		choosestage.UpdateMousePos(window);
+		choosestage.Draw(window);
+		window.display();
+		choosestage.UpdateUnlockStatus00(stage00.GetStageComplete());
+		choosestage.UpdateUnlockStatus01(stage01.GetStageComplete());
+		choosestage.UpdateUnlockStatus02(stage02.GetStageComplete());
+		if (choosestage.GetForChangeWindow() == 0)
+		{
+			StageSound.stop();
+			goto stage00;
+		}
+		else if (choosestage.GetForChangeWindow() == 1)
+		{
+			StageSound.stop();
+			goto stage01;
+		}
+		else if (choosestage.GetForChangeWindow() == 2)
+		{
+			StageSound.stop();
+			goto stage02;
+		}
+		else if (choosestage.GetForChangeWindow() == 3)
+		{
+			StageSound.stop();
+			goto stage03;
+		}
+		else if (choosestage.GetForChangeWindow() == 4)
+		{
+			StageSound.stop();
+			goto stage04;
+		}
+		else if (choosestage.GetForChangeWindow() == 5)
+		{
+			StageSound.stop();
+			goto stage05;
+		}
+		else if (choosestage.GetForChangeWindow() == 6)
+		{
+			StageSound.stop();
+			goto stage06;
+		}
+		else if (choosestage.GetForChangeWindow() == 99)
+		{
+			StageSound.stop();
+			goto mainmenu;
+		}
 		}
 
 		if (howtoplay.GetActive() == true)
 		{
-howtoplay:	if (HowToPlaySound.getStatus() != HowToPlaySound.Playing)
+		howtoplay:	if (HowToPlaySound.getStatus() != HowToPlaySound.Playing)
 		{
 			HowToPlaySound.play();
 		}
-			howtoplay.Run();
-			window.clear();
-			window.setView(viewCenter);
-			howtoplay.Draw(window);
-			window.display();
-			if (howtoplay.GetforChangeWindow() == 99)
-			{
-				HowToPlaySound.stop();
-				goto mainmenu;
-			}
+		howtoplay.Run();
+		window.clear();
+		window.setView(viewCenter);
+		howtoplay.Draw(window);
+		window.display();
+		if (howtoplay.GetforChangeWindow() == 99)
+		{
+			HowToPlaySound.stop();
+			goto mainmenu;
+		}
 		}
 
 		if (entername.GetActive() == true)
 		{
-entername:	entername.Run(window);
+		entername:	entername.Run(window);
 			window.clear();
 			window.setView(viewCenter);
 			entername.Draw(window);
@@ -363,220 +363,222 @@ entername:	entername.Run(window);
 
 		if (leaderboard.GetActive() == true)
 		{
-leaderboard:	if (LeaderBoardSound.getStatus() != LeaderBoardSound.Playing)
+		leaderboard:	if (LeaderBoardSound.getStatus() != LeaderBoardSound.Playing)
 		{
 			LeaderBoardSound.play();
-		}	
-			leaderboard.Run();
-			window.clear();
-			window.setView(viewCenter);
-			leaderboard.Draw(window);
-			window.display();
-			if (leaderboard.GetforChangeWindow() == 99)
-			{
-				LeaderBoardSound.stop();
-				goto mainmenu;
-			}
+		}
+		leaderboard.Run();
+		window.clear();
+		window.setView(viewCenter);
+		leaderboard.Draw(window);
+		window.display();
+		if (leaderboard.GetforChangeWindow() == 99)
+		{
+			LeaderBoardSound.stop();
+			goto mainmenu;
+		}
 		}
 
 		if (credit.GetActive() == true)
 		{
-credit:	if (CreditSound.getStatus() != CreditSound.Playing)
+		credit:	if (CreditSound.getStatus() != CreditSound.Playing)
 		{
 			CreditSound.play();
 		}
-			credit.Run();
-			window.clear();
-			window.setView(viewCenter);
-			credit.Draw(window);
-			window.display();
-			if (credit.GetforChangeWindow() == 99)
-			{
-				CreditSound.stop();
-				goto mainmenu;
-			}
+		credit.Run();
+		window.clear();
+		window.setView(viewCenter);
+		credit.Draw(window);
+		window.display();
+		if (credit.GetforChangeWindow() == 99)
+		{
+			CreditSound.stop();
+			goto mainmenu;
+		}
 		}
 
 		if (stage00.GetActive() == true)
 		{
-stage00:	if (Stage00Sound.getStatus() != Stage00Sound.Playing)
+		stage00:	if (Stage00Sound.getStatus() != Stage00Sound.Playing)
 		{
 			Stage00Sound.play();
 		}
-			stage00.run(deltaTime);
-			view.setCenter(stage00.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage00.Draw(window);
-			window.setView(view);
-			window.display();
-			//printf("%d\n", stage00.GetforTotalScore());
-			if (stage00.GetForChangeWindow() == 99)
-			{
-				Stage00Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage00.GetForChangeWindow() == 20)
-			{
-				Stage00Sound.stop();
-				totalScore += scoreStage00;
-				goto choosestage;
-			}
-			else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 1)
-			{	
-				Stage00Sound.stop();
-				totalScore += scoreStage00;
-				goto stage01;
-			} else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 2)
-			{
-				Stage00Sound.stop();
-				totalScore += scoreStage00;
-				goto stage02;
-			}
-			scoreStage00 = stage00.GetforTotalScore();
+		stage00.run(deltaTime);
+		view.setCenter(stage00.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage00.Draw(window);
+		window.setView(view);
+		window.display();
+		//printf("%d\n", stage00.GetforTotalScore());
+		if (stage00.GetForChangeWindow() == 99)
+		{
+			Stage00Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage00.GetForChangeWindow() == 20)
+		{
+			Stage00Sound.stop();
+			totalScore += scoreStage00;
+			goto choosestage;
+		}
+		else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 1)
+		{
+			Stage00Sound.stop();
+			totalScore += scoreStage00;
+			goto stage01;
+		}
+		else if (stage00.GetForChangeWindow() == 11 && stage00.GetNextStage() == 2)
+		{
+			Stage00Sound.stop();
+			totalScore += scoreStage00;
+			goto stage02;
+		}
+		scoreStage00 = stage00.GetforTotalScore();
 		}
 
 		if (stage01.GetActive() == true)
 		{
-stage01:	if (Stage01Sound.getStatus() != Stage01Sound.Playing)
+		stage01:	if (Stage01Sound.getStatus() != Stage01Sound.Playing)
 		{
 			Stage01Sound.play();
 		}
-			stage01.run(deltaTime);
-			view.setCenter(stage01.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage01.Draw(window);
-			window.setView(view);
-			window.display();
-			if (stage01.GetForChangeWindow() == 99)
-			{
-				Stage01Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage01.GetForChangeWindow() == 20)
-			{
-				Stage01Sound.stop();
-				totalScore += scoreStage01;
-				goto choosestage;
-			}
-			else if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 1)
-			{
-				Stage01Sound.stop();
-				totalScore += scoreStage01;
-				goto stage03;
-			} else  if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 2)
-			{
-				Stage01Sound.stop();
-				totalScore += scoreStage01;
-				goto stage04;
-			}
-			scoreStage01 = stage01.GetforTotalScore();
+		stage01.run(deltaTime);
+		view.setCenter(stage01.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage01.Draw(window);
+		window.setView(view);
+		window.display();
+		if (stage01.GetForChangeWindow() == 99)
+		{
+			Stage01Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage01.GetForChangeWindow() == 20)
+		{
+			Stage01Sound.stop();
+			totalScore += scoreStage01;
+			goto choosestage;
+		}
+		else if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 1)
+		{
+			Stage01Sound.stop();
+			totalScore += scoreStage01;
+			goto stage03;
+		}
+		else  if (stage01.GetForChangeWindow() == 11 && stage01.GetNextStage() == 2)
+		{
+			Stage01Sound.stop();
+			totalScore += scoreStage01;
+			goto stage04;
+		}
+		scoreStage01 = stage01.GetforTotalScore();
 		}
 
 		if (stage02.GetActive() == true)
 		{
-stage02:	if (Stage02Sound.getStatus() != Stage02Sound.Playing)
+		stage02:	if (Stage02Sound.getStatus() != Stage02Sound.Playing)
 		{
 			Stage02Sound.play();
 		}
-			stage02.run(deltaTime);
-			view.setCenter(stage02.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage02.Draw(window);
-			window.setView(view);
-			window.display();
-			if (stage02.GetForChangeWindow() == 99)
-			{
-				Stage02Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage02.GetForChangeWindow() == 20)
-			{
-				Stage02Sound.stop();
-				totalScore += scoreStage02;
-				goto choosestage;
-			}
-			else if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 1)
-			{
-				Stage02Sound.stop();
-				totalScore += scoreStage02;
-				goto stage05;
-			}
-			else  if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 2)
-			{
-				Stage02Sound.stop();
-				totalScore += scoreStage02;
-				goto stage06;
-			}
-			scoreStage02 = stage02.GetforTotalScore();
+		stage02.run(deltaTime);
+		view.setCenter(stage02.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage02.Draw(window);
+		window.setView(view);
+		window.display();
+		if (stage02.GetForChangeWindow() == 99)
+		{
+			Stage02Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage02.GetForChangeWindow() == 20)
+		{
+			Stage02Sound.stop();
+			totalScore += scoreStage02;
+			goto choosestage;
+		}
+		else if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 1)
+		{
+			Stage02Sound.stop();
+			totalScore += scoreStage02;
+			goto stage05;
+		}
+		else  if (stage02.GetForChangeWindow() == 11 && stage02.GetNextStage() == 2)
+		{
+			Stage02Sound.stop();
+			totalScore += scoreStage02;
+			goto stage06;
+		}
+		scoreStage02 = stage02.GetforTotalScore();
 		}
 
 		if (stage03.GetActive() == true)
 		{
-stage03:	if (Stage03Sound.getStatus() != Stage03Sound.Playing)
+		stage03:	if (Stage03Sound.getStatus() != Stage03Sound.Playing)
 		{
 			Stage03Sound.play();
 		}
 		stage03.run(deltaTime);
-			view.setCenter(stage03.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage03.Draw(window);
-			window.setView(view);
-			window.display();
-			if (stage03.GetForChangeWindow() == 99)
-			{
-				Stage03Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage03.GetForChangeWindow() == 20)
-			{
-				Stage03Sound.stop();
-				totalScore += scoreStage03;
-				goto choosestage;
-			}
-			else if (stage03.GetForChangeWindow() == 11)
-			{
-				Stage03Sound.stop();
-				totalScore += scoreStage03;
-				goto mainmenu;
-			}
-			scoreStage03 = stage03.GetforTotalScore();
+		view.setCenter(stage03.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage03.Draw(window);
+		window.setView(view);
+		window.display();
+		if (stage03.GetForChangeWindow() == 99)
+		{
+			Stage03Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage03.GetForChangeWindow() == 20)
+		{
+			Stage03Sound.stop();
+			totalScore += scoreStage03;
+			goto choosestage;
+		}
+		else if (stage03.GetForChangeWindow() == 11)
+		{
+			Stage03Sound.stop();
+			totalScore += scoreStage03;
+			goto mainmenu;
+		}
+		scoreStage03 = stage03.GetforTotalScore();
 		}
 
 		if (stage04.GetActive() == true)
 		{
-stage04:	if (Stage04Sound.getStatus() != Stage04Sound.Playing)
+		stage04:	if (Stage04Sound.getStatus() != Stage04Sound.Playing)
 		{
 			Stage04Sound.play();
 		}
-			stage04.run(deltaTime);
-			view.setCenter(stage04.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage04.Draw(window);
-			window.setView(view);
-			window.display();
-			if (stage04.GetForChangeWindow() == 99)
-			{
-				Stage04Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage04.GetForChangeWindow() == 20)
-			{
-				Stage04Sound.stop();
-				totalScore += scoreStage04;
-				goto choosestage;
-			}
-			else if (stage04.GetForChangeWindow() == 11)
-			{
-				Stage04Sound.stop();
-				totalScore += scoreStage04;
-				goto mainmenu;
-			}
-			scoreStage04 = stage04.GetforTotalScore();
+		stage04.run(deltaTime);
+		view.setCenter(stage04.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage04.Draw(window);
+		window.setView(view);
+		window.display();
+		if (stage04.GetForChangeWindow() == 99)
+		{
+			Stage04Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage04.GetForChangeWindow() == 20)
+		{
+			Stage04Sound.stop();
+			totalScore += scoreStage04;
+			goto choosestage;
+		}
+		else if (stage04.GetForChangeWindow() == 11)
+		{
+			Stage04Sound.stop();
+			totalScore += scoreStage04;
+			goto mainmenu;
+		}
+		scoreStage04 = stage04.GetforTotalScore();
 		}
 
 		if (stage05.GetActive() == true)
 		{
-stage05:	if (Stage05Sound.getStatus() != Stage05Sound.Playing)
+		stage05:	if (Stage05Sound.getStatus() != Stage05Sound.Playing)
 		{
 			Stage05Sound.play();
 		}
@@ -586,55 +588,58 @@ stage05:	if (Stage05Sound.getStatus() != Stage05Sound.Playing)
 		stage05.Draw(window);
 		window.setView(view);
 		window.display();
-			if (stage05.GetForChangeWindow() == 99)
-			{
-				Stage05Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage05.GetForChangeWindow() == 20)
-			
-				Stage05Sound.stop();
-				totalScore += scoreStage05;
-				goto choosestage;
-			}
-			else if (stage05.GetForChangeWindow() == 11)
-			{
-				Stage05Sound.stop();
-				totalScore += scoreStage05;
-				goto mainmenu;
-			}
-			scoreStage05 = stage05.GetforTotalScore();
+		if (stage05.GetForChangeWindow() == 99)
+		{
+			Stage05Sound.stop();
+			goto mainmenu;
 		}
+		else if (stage05.GetForChangeWindow() == 20)
+		{
+			Stage05Sound.stop();
+			totalScore += scoreStage05;
+			goto choosestage;
+		}
+		else if (stage05.GetForChangeWindow() == 11)
+		{
+			Stage05Sound.stop();
+			totalScore += scoreStage05;
+			goto mainmenu;
+		}
+		scoreStage05 = stage05.GetforTotalScore();
+		}
+
+
 		if (stage06.GetActive() == true)
 		{
-stage06:	if (Stage06Sound.getStatus() != Stage06Sound.Playing)
+		stage06:	if (Stage06Sound.getStatus() != Stage06Sound.Playing)
 		{
 			Stage06Sound.play();
-		}	
-			stage06.run(deltaTime);
-			view.setCenter(stage06.Getplayerposition().x, 350.0f);
-			window.clear();
-			stage06.Draw(window);
-			window.setView(view);
-			window.display();
-			if (stage06.GetForChangeWindow() == 99)
-			{
-				Stage06Sound.stop();
-				goto mainmenu;
-			}
-			else if (stage06.GetForChangeWindow() == 20)
-			{
-				Stage06Sound.stop();
-				totalScore += scoreStage06;
-				goto choosestage;
-			}
-			else if (stage06.GetForChangeWindow() == 11)
-			{
-				Stage06Sound.stop();
-				totalScore += scoreStage06;
-				goto mainmenu;
-			}
-			scoreStage06 = stage06.GetforTotalScore();
 		}
+		stage06.run(deltaTime);
+		view.setCenter(stage06.Getplayerposition().x, 350.0f);
+		window.clear();
+		stage06.Draw(window);
+		window.setView(view);
+		window.display();
+		if (stage06.GetForChangeWindow() == 99)
+		{
+			Stage06Sound.stop();
+			goto mainmenu;
+		}
+		else if (stage06.GetForChangeWindow() == 20)
+		{
+			Stage06Sound.stop();
+			totalScore += scoreStage06;
+			goto choosestage;
+		}
+		else if (stage06.GetForChangeWindow() == 11)
+		{
+			Stage06Sound.stop();
+			totalScore += scoreStage06;
+			goto mainmenu;
+		}
+		scoreStage06 = stage06.GetforTotalScore();
+		}
+	}
 	return 0;
 }
