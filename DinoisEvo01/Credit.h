@@ -20,6 +20,8 @@ private:
 	RectangleShape howToPlayBG;
 	Texture howToPlayTexture;
 
+	Event evnt;
+
 	Text returnToMenuText;
 	RectangleShape returnToMenuBG;
 

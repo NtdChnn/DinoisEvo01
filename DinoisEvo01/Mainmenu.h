@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
 #include <sstream> 
+#include <SFML\Audio.hpp>
 using namespace sf;
 class Mainmenu
 {
@@ -52,5 +53,10 @@ private:
 	Vector2i mousePos;
 	Vector2f mousePosF;
 	int CheckForChangeWindow = 1;
+
+	SoundBuffer MenuBGsound;
+	Sound MenuBG;
+
+	bool playsound = false;
 };
 

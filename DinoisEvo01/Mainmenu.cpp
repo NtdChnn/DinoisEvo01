@@ -120,6 +120,9 @@ Mainmenu::Mainmenu()
 		menuTextExit.setPosition(Vector2f(510.0f, 600.0f));
 		menuTextExit.setOrigin(Vector2f(25.0f, 25.0f));
 	}
+
+	MenuBGsound.loadFromFile("SoundBG_MainMenu.ogg");
+	MenuBG.setBuffer(MenuBGsound);
 }
 
 Mainmenu::~Mainmenu()
@@ -131,6 +134,10 @@ void Mainmenu::Run()
 {
 	Active = true;
 	forChangeWindow = 99;
+	if (MenuBG.getStatus() != MenuBG.Playing)
+	{
+		MenuBG.play();
+	}
 	//NEW GAME//
 	if (this->menuBGtextNG.getGlobalBounds().contains(mousePosF) || Keyboard::isKeyPressed(Keyboard::Key::N))
 	{
@@ -144,6 +151,7 @@ void Mainmenu::Run()
 			//printf("%d",forChangeWindow);
 			forChangeWindow = 10;
 			Active = false;
+			MenuBG.stop();
 		}
 	}
 	else {
@@ -165,6 +173,7 @@ void Mainmenu::Run()
 			//printf("LeaderBoard");
 			forChangeWindow = 30;
 			Active = false;
+			MenuBG.stop();
 		}
 	}
 	else {
@@ -177,6 +186,7 @@ void Mainmenu::Run()
 	{
 		printf("LeaderBoard");
 		forChangeWindow = 20;
+		MenuBG.stop();
 	}
 
 	//STAGE//
@@ -191,6 +201,7 @@ void Mainmenu::Run()
 			//printf("Stage");
 			forChangeWindow = 20;
 			Active = false;
+			MenuBG.stop();
 		}
 	}
 	else
@@ -204,6 +215,7 @@ void Mainmenu::Run()
 	{
 		printf("Stage");
 		forChangeWindow = 30;
+		MenuBG.stop();
 	}
 
 	//HOWTOPLAY//
@@ -218,6 +230,7 @@ void Mainmenu::Run()
 			//printf("How To Play");
 			forChangeWindow = 40;
 			Active = false;
+			MenuBG.stop();
 		}
 	}
 	else
@@ -231,6 +244,7 @@ void Mainmenu::Run()
 	{
 		printf("How To Play");
 		forChangeWindow = 40;
+		MenuBG.stop();
 	}
 
 	//CREDIT//
@@ -245,6 +259,7 @@ void Mainmenu::Run()
 			//printf("Credit");
 			forChangeWindow = 50;
 			Active = false;
+			MenuBG.stop();
 		}
 	}
 	else
@@ -258,6 +273,7 @@ void Mainmenu::Run()
 	{
 		printf("Credit");
 		forChangeWindow = 50;
+		MenuBG.stop();
 	}
 
 	//EXIT//
@@ -270,6 +286,7 @@ void Mainmenu::Run()
 		if (Mouse::isButtonPressed(Mouse::Left))
 		{
 			forChangeWindow = 60;
+			MenuBG.stop();
 		}
 	}
 	else
@@ -282,6 +299,7 @@ void Mainmenu::Run()
 	if (Keyboard::isKeyPressed(Keyboard::Key::E))
 	{
 		forChangeWindow = 60;
+		MenuBG.stop();
 	}
 
 }

@@ -21,5 +21,7 @@ private:
 	Text gameOverText;
 	Text pressRtoRestartText;
 
+	Event evnt;
+
 	bool SGameover = false;
 };

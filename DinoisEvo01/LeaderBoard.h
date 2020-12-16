@@ -22,6 +22,8 @@ private:
 	string nameArr[6];
 	int scoreArr[6] = {};
 
+	Event evnt;
+
 	Text returnToMenuText;
 	RectangleShape returnToMenuBG;
 

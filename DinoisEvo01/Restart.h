@@ -15,5 +15,7 @@ private:
 	bool restart = false;
 	int checkpress01 = 0;
 	int checkpress02 = 0;
+
+	Event evnt;
 };
 

@@ -35,20 +35,29 @@ void EnterName::Draw(RenderWindow& window)
 	textbox.draw(window);
 }
 
-void EnterName::Run(RenderWindow& window,Event event)
+void EnterName::Run(RenderWindow& window)
 {
 	Active = true;
 	forChangeWindow = 50;
-	while (window.pollEvent(event))
+	Event evnt;
+	while (window.pollEvent(evnt))
 	{
-		if (event.type == Event::TextEntered) textbox.update(event);
-		if (event.type == Event::KeyPressed && event.key.code == Keyboard::Return)
+		switch (evnt.type)
 		{
-			collectHS = false;
-			name = textbox.getInput();
-			textbox.setSelected(false);
-			forChangeWindow = 0;
-			Active = false;
+		case Event::TextEntered:
+			textbox.update(evnt);
+			break;
+		case Event::KeyPressed:
+			if (evnt.key.code == Keyboard::Enter)
+			{
+				collectHS = false;
+				name = textbox.getInput();
+				cout << name;
+				textbox.setSelected(false);
+				forChangeWindow = 0;
+				Active = false;
+			}
+			break;
 		}
 	}
 

@@ -8,17 +8,17 @@ public:
 	~EnterName();
 
 	void Draw(RenderWindow& window);
-	void Run(RenderWindow& window, Event event);
+	void Run(RenderWindow& window);
 	bool GetActive() { return Active; };
 	int GetforChangeWindow() { return forChangeWindow; };
-	String GetName() { return name; };
+	string GetName() { return name; };
 private:
 	RectangleShape EnterNameBG;
 	Texture EnterNameTexture;
-
+	
 	TextBox textbox;
 
-	String name;
+	string name;
 	bool collectHS = false;
 
 	Text returnToMenuText;

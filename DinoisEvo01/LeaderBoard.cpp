@@ -23,25 +23,25 @@ LeaderBoard::LeaderBoard()
 	fclose(file);
 
 	text[0].setFont(gameFont);
-	text[0].setPosition(Vector2f(100,100));
+	text[0].setPosition(Vector2f(100,300));
 	text[0].setString(highScore[0].second);
 	text[0].setCharacterSize(25);
 	text[0].setOutlineColor(Color::White);
 
 	text[1].setFont(gameFont);
-	text[1].setPosition(Vector2f(100, 200));
+	text[1].setPosition(Vector2f(100, 350));
 	text[1].setString(highScore[1].second);
 	text[1].setCharacterSize(25);
 	text[1].setOutlineColor(Color::White);
 
 	text[2].setFont(gameFont);
-	text[2].setPosition(Vector2f(100, 300));
+	text[2].setPosition(Vector2f(100, 400));
 	text[2].setString(highScore[2].second);
 	text[2].setCharacterSize(25);
 	text[2].setOutlineColor(Color::White);
 
 	text[3].setFont(gameFont);
-	text[3].setPosition(Vector2f(100, 400));
+	text[3].setPosition(Vector2f(100, 450));
 	text[3].setString(highScore[3].second);
 	text[3].setCharacterSize(25);
 	text[3].setOutlineColor(Color::White);
@@ -53,25 +53,25 @@ LeaderBoard::LeaderBoard()
 	text[4].setOutlineColor(Color::White);
 
 	text[5].setFont(gameFont);
-	text[5].setPosition(Vector2f(400, 100));
+	text[5].setPosition(Vector2f(400, 300));
 	text[5].setString(to_string(highScore[0].first));
 	text[5].setCharacterSize(25);
 	text[5].setOutlineColor(Color::White);
 
 	text[6].setFont(gameFont);
-	text[6].setPosition(Vector2f(400, 200));
+	text[6].setPosition(Vector2f(400, 350));
 	text[6].setString(to_string(highScore[1].first));
 	text[6].setCharacterSize(25);
 	text[6].setOutlineColor(Color::White);
 
 	text[7].setFont(gameFont);
-	text[7].setPosition(Vector2f(400, 300));
+	text[7].setPosition(Vector2f(400, 400));
 	text[7].setString(to_string(highScore[2].first));
 	text[7].setCharacterSize(25);
 	text[7].setOutlineColor(Color::White);
 
 	text[8].setFont(gameFont);
-	text[8].setPosition(Vector2f(400, 400));
+	text[8].setPosition(Vector2f(400, 450));
 	text[8].setString(to_string(highScore[3].first));
 	text[8].setCharacterSize(25);
 	text[8].setOutlineColor(Color::White);
@@ -116,6 +116,7 @@ void LeaderBoard::Draw(RenderWindow& window)
 	window.draw(text[7]);
 	window.draw(text[8]);
 	window.draw(text[9]);
+	window.draw(returnToMenuText);
 }
 
 void LeaderBoard::Run()

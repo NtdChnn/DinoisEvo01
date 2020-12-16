@@ -21,7 +21,9 @@ private:
 	Font gameFont;
 
 	RectangleShape stageCompleteBG;
-	
+
+	Event evnt;
+
 	Text textStage;
 	Text textComplete;
 

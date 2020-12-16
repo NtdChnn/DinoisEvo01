@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <SFML\Audio.hpp>
 #include "Animation.h"
 using namespace sf;
 class Player
@@ -31,5 +32,8 @@ private:
 	float jumpSpeed;
 	float deltaTime = 0.0f;
 	Clock clock;
+
+	SoundBuffer JumpBuffer;
+	Sound JumpSound;
 };
 

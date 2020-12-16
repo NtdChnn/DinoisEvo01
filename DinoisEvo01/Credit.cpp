@@ -4,7 +4,7 @@ Credit::Credit()
 {
 	gameFont.loadFromFile("PixelEmulator-xq08.ttf");
 
-	howToPlayTexture.loadFromFile("BGforHowToPlay.png");
+	howToPlayTexture.loadFromFile("BGCredit.png");
 	howToPlayBG.setTexture(&howToPlayTexture);
 	howToPlayBG.setSize(Vector2f(1000, 700));
 	howToPlayBG.setPosition(0, 0);

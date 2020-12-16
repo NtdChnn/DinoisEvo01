@@ -28,6 +28,8 @@ private:
 	Font gameFont;
 	RectangleShape pauseBG;
 
+	Event evnt;
+
 	Text returnToMenuText;
 	int forChangeWindow;
 	int checkReturnToMenu = 0;

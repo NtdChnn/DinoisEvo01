@@ -15,6 +15,9 @@ Player::Player(Texture* texture, Vector2u imageCount,Vector2f size, float switch
 	body.setPosition(Vector2f(500.0f, 350.0f));
 	body.setTexture(texture);
 	deltaTime = clock.restart().asSeconds();
+
+	JumpBuffer.loadFromFile("SoundEffectJump.ogg");
+	JumpSound.setBuffer(JumpBuffer);
 }
 
 Player::~Player()
@@ -80,6 +83,14 @@ void Player::Update(float deltatime)
 	if (Keyboard::isKeyPressed(Keyboard::Key::LControl) && Keyboard::isKeyPressed(Keyboard::Key::E))
 	{
 		body.setPosition(12000, 350);
+	}
+
+	if (jump == 1)
+	{
+		if (JumpSound.getStatus() != JumpSound.Playing)
+		{
+			JumpSound.play();
+		}
 	}
 }
 

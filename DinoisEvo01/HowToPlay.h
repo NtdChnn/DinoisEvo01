@@ -23,6 +23,8 @@ private:
 	Text returnToMenuText;
 	RectangleShape returnToMenuBG;
 
+	Event evnt;
+
 	Vector2i mousePos;
 	Vector2f mousePosF;
 };
