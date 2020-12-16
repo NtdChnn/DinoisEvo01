@@ -48,6 +48,11 @@ int main()
 	//EnterName
 	EnterName entername(gameFont);
 
+	//Icon
+	sf::Image icon;
+	icon.loadFromFile("iconreal.png");
+	window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
 	//TotalScore
 	int totalScore = 0;
 	int scoreStage00 = 0;
